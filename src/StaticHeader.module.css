@@ -1,0 +1,10 @@
+.header {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    min-width: 100vw;
+    /* background-color: rgb(74, 72, 72); */
+    background-color: rgb(77, 53, 53);
+    font-size: 0.95em;
+    padding: 3px 0px 8px;
+    text-shadow: 1px 1.5px 2px black;
+}

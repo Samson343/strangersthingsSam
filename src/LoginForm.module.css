@@ -1,6 +1,7 @@
 .loginForm {
     display:flex;
     flex-direction: column;
+    align-self: center;
     width: fit-content;
     height: fit-content;
     border: 1px solid white;
@@ -25,11 +26,7 @@
     box-shadow: 1px 1px 1px 1px;
     background-color: rgb(212, 206, 206);
     border: none;
-    /* min-width: fit-content;
-    border-radius: 3%;
-    padding: 3px 10px; 
-    /* align-self: center; */
-    padding: 3px 8px;
+    padding: 3px 125px;
     border-radius: 1%; 
 }
 .submitButton:hover {

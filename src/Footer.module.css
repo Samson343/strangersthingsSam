@@ -2,8 +2,10 @@
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
     min-width: 100vw;
-    /* background-color: rgb(74, 72, 72); */
-    background-color: rgb(77, 53, 53);
+    background-color: rgb(74, 72, 72);
+    /* background-color: rgb(77, 53, 53); */
+    /* background: rgb(2,0,36);
+    background: linear-gradient(30deg, rgba(116,83,83,1) 1%, rgba(51,26,43,1) 70%); */
     font-size: 0.95em;
     padding: 3px 0px 3px;
 }

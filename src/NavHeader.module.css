@@ -1,4 +1,4 @@
-.header {
+.navHeader {
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
     min-width: 100vw;
@@ -9,8 +9,13 @@
     font-size: 0.95em;
     padding: 3px 0px 8px;
     text-shadow: 1px 1.5px 2px black;
-    
+
 }
-.heading {
-    
-}
+
+
+
+
+
+font-family: 'Fasthand', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Mono', monospace;

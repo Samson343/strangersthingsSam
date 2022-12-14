@@ -5,7 +5,7 @@ import styles from './StaticHeader.module.css'
 export const StaticHeader = () => {
     return (
         <header className= {styles.header}>
-            Stranger's Things
+            <span className={styles.heading}>Stranger's Things</span>
         </header>
     )
 }

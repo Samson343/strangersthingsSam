@@ -15,10 +15,33 @@ export async function gatherPosts () {
     catch (error){
         throw error
     }
-
         // await fetch(`${cohortURL}/posts`)
         //     .then (response =>  response.json())
         //     .then (results => {console.log(results); return results})
         //     .catch (console.error)
 
+}
+
+export async function register (name, password) {
+    try {
+        const response = await fetch(`${cohortURL}/users/register`, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            user: {
+                username: name,   
+                password: password
+            }
+          })
+        })
+        const json = await response.json()
+        console.log(json)
+
+        return json
+    }
+    catch (error) {
+        throw error
+    }
 }

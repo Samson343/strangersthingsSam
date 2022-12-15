@@ -26,7 +26,9 @@ const LoginForm = () => {
             <Link to = '/main'>
             <button className={styles.submitButton}>Submit</button>
             </Link>
-            <p title = "No worries! Enter your prefered username and password above and we'll create one for you.">don't have an account?</p>
+            <Link to = '/register'>
+            <p title = "No worries! Click here and we'll get you set up in just one step.">don't have an account?</p>
+            </Link>
         </form>
     
     )

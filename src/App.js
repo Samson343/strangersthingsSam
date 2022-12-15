@@ -6,6 +6,7 @@ import { StaticHeader } from './StaticHeader';
 import Footer from './Footer';
 import Main from './Main';
 import NavHeader from './NavHeader';
+import RegisterForm from './RegisterForm';
 import { gatherPosts } from './apiIndex';
 import { useEffect, useState } from 'react';
 
@@ -23,6 +24,10 @@ function App() {
         <Route path = "/login">
           <StaticHeader />
           <LoginForm />
+        </Route>
+        <Route path = "/register">
+          <StaticHeader />
+          <RegisterForm />
         </Route>
 
         <Route path = "/main">

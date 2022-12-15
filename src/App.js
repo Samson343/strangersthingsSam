@@ -6,14 +6,19 @@ import { StaticHeader } from './StaticHeader';
 import Footer from './Footer';
 import Main from './Main';
 import NavHeader from './NavHeader';
+import { gatherPosts } from './apiIndex';
+import { useEffect, useState } from 'react';
+
 
 function App() {
+
+  const [posts, setPosts] = useState([])
+
+  
+
   return (
     <Router>
       <div className="App">
-
-        <head>
-        </head>
         
         <Route path = "/login">
           <StaticHeader />
@@ -22,7 +27,11 @@ function App() {
 
         <Route path = "/main">
           <NavHeader />
-          <Main />
+          <Main 
+            posts = {posts}
+            setPosts = {setPosts}
+            gatherPosts = {gatherPosts}
+          />
         </Route>
 
         <Footer />

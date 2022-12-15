@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faHouseUser } from '@fortawesome/free-solid-svg-icons'
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { faMessage } from '@fortawesome/free-solid-svg-icons'
+import { faMessage, fa2 } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -13,9 +13,7 @@ import { faMessage } from '@fortawesome/free-solid-svg-icons'
 export default function NavHeader () {
     return (
         <>
-            <head>
-            <script src="https://kit.fontawesome.com/dcad18d1cb.js" crossorigin="anonymous"></script>
-            </head>
+            
             <header className= {styles.navHeader}>
                 <span className={styles.spaceHolder}></span>
 

@@ -53,3 +53,8 @@ p {
     cursor:help;
     user-select: none;
 }
+.input:valid,
+textarea:valid {
+    /* background-color: rgb(196, 237, 244); */
+    background-color: rgb(149, 118, 118)
+}

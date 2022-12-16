@@ -1,0 +1,67 @@
+.loginForm {
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid white;
+    padding: 50px;
+    border-radius: 1.5%;
+    box-shadow: 10px 10px 10px 3px rgb(35, 35, 35);
+    background-color: #282c34;
+}
+.loginLabels {
+    font-size: 0.6em;
+    color: white;
+    margin-right: 15px;
+    
+}
+.submitButton {
+    margin-top: 1.5em;
+    /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 0.44em;
+    box-shadow: 1px 1px 1px 1px;
+    background-color: rgb(212, 206, 206);
+    border: none;
+    padding: 3px 125px;
+    border-radius: 1%; 
+}
+.submitButton:hover {
+    background-color: rgb(63, 145, 160);
+    color: white;
+    box-shadow: 1px 1px 1px 1px darkgray;
+}
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.input {
+    text-align: center;
+    border-radius: 1.5%;
+    box-shadow: 2px 2px 2px 2px rgb(35, 35, 35);
+}
+.input:valid,
+textarea:valid {
+    /* background-color: rgb(196, 237, 244); */
+    background-color: rgb(149, 118, 118)
+}
+p {
+    padding: 0;
+    margin: 10px 0 0;
+    font-size: 0.4em;
+    flex-basis: 0px;
+    color:rgb(146, 146, 229);
+    cursor:help;
+    user-select: none;
+}
+.botMessage {
+    color:rgb(146, 146, 229);
+    padding: 0;
+    margin: 10px 0 0;
+    font-size: 0.4em;
+    flex-basis: 0px;
+}

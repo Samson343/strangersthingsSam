@@ -45,3 +45,27 @@ export async function register (name, password) {
         throw error
     }
 }
+
+export async function login(name, password) {
+    try {
+        const response = await fetch(`${cohortURL}/users/login`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user: {
+                    username: name,
+                    password: password
+                }
+            })
+        })
+        const json = await response.json()
+
+        return json
+    }
+    catch (error) {
+        console.error(error)
+    }
+
+}

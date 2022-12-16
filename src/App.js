@@ -14,6 +14,8 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [posts, setPosts] = useState([])
+  const [isAuthorized, setIsAuthorized] = useState(false)
+  const [token, setToken] = useState('')
 
   
 
@@ -25,9 +27,15 @@ function App() {
           <StaticHeader />
           <LoginForm />
         </Route>
+
         <Route path = "/register">
           <StaticHeader />
-          <RegisterForm />
+          <RegisterForm 
+            isAuthorized = {isAuthorized}
+            setIsAuthorized = {setIsAuthorized}
+            setToken = {setToken}
+          
+          />
         </Route>
 
         <Route path = "/main">
@@ -47,3 +55,4 @@ function App() {
 }
 
 export default App;
+

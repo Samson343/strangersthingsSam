@@ -1,0 +1,65 @@
+.main {   
+    overflow-y: scroll;
+    height: 72vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
+    flex-wrap: wrap;
+    align-self: center;
+    border-top: 1px solid white;
+    /* border-bottom: 1px solid white; */
+}
+
+.postCard {
+    border: 2px solid white;
+    width: 20em;
+    height: 15em;
+    margin: 10px 10px;
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px 3px rgb(35, 35, 35);
+    background-color: #282c34;
+    text-align: left;
+    padding: 20px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.price{
+    color: white;
+    font-size: 18px;
+    font-weight:600;
+}
+.description {
+    color: white;
+    font-size: 17px;
+    font-style: italic;
+}
+.title {
+    border-bottom: 0.5px solid lightgray;
+    padding-bottom: 6px;
+}
+.seller {
+    font-size: 16px;
+}
+.backButton {
+   align-self: flex-end;
+   
+}
+
+
+
+.main::-webkit-scrollbar {
+    border-radius: 30%;
+}
+
+.main::-webkit-scrollbar-track-piece {
+    background: rgb(77, 53, 53);
+    border-radius: 20%;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20%;
+}

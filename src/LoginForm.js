@@ -21,11 +21,10 @@ const LoginForm = ({ renderCondition }) => {
     const [loginData, setLoginData] = useState({success:false, error: {message: ""}}) 
 
     //ensures the error message at the bottom of the form appears, including the first failed login attempt
-    useEffect (() => {
-                if (loginData.error !== null) {
-        setBotMessage(loginData.error.message)}
-        
-    
+    useEffect(() => {
+        if (loginData.error !== null) {
+            setBotMessage(loginData.error.message)
+        }
     }, [loginData])
 
     // useEffect (() => 
@@ -53,7 +52,7 @@ const LoginForm = ({ renderCondition }) => {
             }
 
             <div className={styles.inputs}>
-                <label className={styles.loginLabels}>User Name</label>
+                <label className={styles.loginLabels}>Username</label>
                 <input minLength="3" type="text" placeholder='Username' className={styles.input} required
                     value={loginName}
                     onChange={event =>

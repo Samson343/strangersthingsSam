@@ -58,3 +58,13 @@ textarea:valid {
     /* background-color: rgb(196, 237, 244); */
     background-color: rgb(149, 118, 118)
 }
+.pleaseLogin {
+    padding: 0 0 10px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 15px;
+    color: rgb(146, 146, 229);
+}
+.error {
+    color: rgb(179, 3, 3)
+}

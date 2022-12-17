@@ -9,6 +9,7 @@ import NavHeader from './NavHeader';
 import RegisterForm from './RegisterForm';
 import { gatherPosts } from './apiIndex';
 import { useEffect, useState } from 'react';
+import '@fontsource/roboto/300.css';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
   const [posts, setPosts] = useState([])
   const [isAuthorized, setIsAuthorized] = useState(false)
   const [token, setToken] = useState('')
-
+  const [renderCondition, setRenderCondition] = useState (false)
   
 
   return (
@@ -25,7 +26,9 @@ function App() {
         
         <Route path = "/login">
           <StaticHeader />
-          <LoginForm />
+          <LoginForm 
+            renderCondition = {renderCondition}
+          />
         </Route>
 
         <Route path = "/register">
@@ -34,6 +37,8 @@ function App() {
             isAuthorized = {isAuthorized}
             setIsAuthorized = {setIsAuthorized}
             setToken = {setToken}
+            renderCondition = {renderCondition}
+            setRenderCondition = {setRenderCondition}
           
           />
         </Route>

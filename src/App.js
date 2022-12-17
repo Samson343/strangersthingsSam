@@ -28,15 +28,16 @@ function App() {
           <StaticHeader />
           <LoginForm 
             renderCondition = {renderCondition}
+            setRenderCondition = {setRenderCondition}
+            setIsAuthorized = {setIsAuthorized}
+            setToken = {setToken}
+            token = {token}
           />
         </Route>
 
         <Route path = "/register">
           <StaticHeader />
           <RegisterForm 
-            isAuthorized = {isAuthorized}
-            setIsAuthorized = {setIsAuthorized}
-            setToken = {setToken}
             renderCondition = {renderCondition}
             setRenderCondition = {setRenderCondition}
           
@@ -49,6 +50,8 @@ function App() {
             posts = {posts}
             setPosts = {setPosts}
             gatherPosts = {gatherPosts}
+            token = {token}
+            isAuthorized = {isAuthorized}
           />
         </Route>
 

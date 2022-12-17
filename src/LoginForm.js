@@ -12,20 +12,29 @@ import zIndex from '@mui/material/styles/zIndex';
 
 
 
-const LoginForm = ({ renderCondition }) => {
+const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthorized, token }) => {
 
     const [loginPass, setLoginPass] = useState('')
     const [loginName, setLoginName] = useState('')
     const [botMessage, setBotMessage] = useState('')
     const [loginSuccess, setLoginSuccess] = useState(false)
-    const [loginData, setLoginData] = useState({success:false, error: {message: ""}}) 
+    const [loginData, setLoginData] = useState({success:false, error: {message: ""}, data: {token: ""}}) 
 
     //ensures the error message at the bottom of the form appears, including the first failed login attempt
     useEffect(() => {
         if (loginData.error !== null) {
             setBotMessage(loginData.error.message)
+            setTimeout(() => setBotMessage(''), 3900)
         }
+        console.log("this is logindata", loginData)
     }, [loginData])
+
+    // useEffect (() => {
+    //     if (loginData.data.token !== "" ) {
+    //     setToken(loginData.data.token)
+    //     }
+    // }, [setToken, loginData])
+
 
     // useEffect (() => 
     //     console.log(loginData), 
@@ -35,15 +44,23 @@ const LoginForm = ({ renderCondition }) => {
 
         <form className={styles.loginForm} onSubmit={async (e) => {
             e.preventDefault()
-
-            await login(loginPass, loginName)
-                .then(data => 
-                    setLoginData(data))
-                .then( () =>
-                    !loginData.success &&
-                    setBotMessage(loginData.error.message))
-                .then (() =>
-                setTimeout(() => setBotMessage(''), 3900))
+            try {
+                await login(loginPass, loginName)
+                    .then(async data => {
+                        console.log(data)
+                        setLoginData(data)
+                        if (data.data !== null) {
+                            setToken(data.data.token)}
+                        if (data.success) { 
+                            setRenderCondition(false); 
+                            setIsAuthorized(true)
+                        }
+                    }
+                )
+            }
+            catch (error) {
+                console.log(error)
+            }
                 
         }
         }>
@@ -86,6 +103,7 @@ const LoginForm = ({ renderCondition }) => {
 
             {   loginData.success &&
                  <Redirect to = "/main" />
+                 
             }
 
             

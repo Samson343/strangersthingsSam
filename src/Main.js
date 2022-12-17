@@ -3,20 +3,19 @@ import { useEffect } from 'react'
 import { gatherPosts } from './apiIndex'
 import styles from './Main.module.css'
 
-export default function Main ({ setPosts, posts}) {
+export default function Main ({ setPosts, posts, token, isAuthenticated}) {
 
     useEffect(() => {
         gatherPosts()
                 .then(data => {
                     setPosts(data.data.posts)
-                    console.log(data.data.posts)
+                    console.log(token)
                 })
                 .catch((error) => {
                     console.log(error)
                 })
 
     }, [])
-    console.log(posts)
 
     return (
         <div className={styles.main}>

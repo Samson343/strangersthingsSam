@@ -97,7 +97,7 @@ const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthori
         
             { !renderCondition &&
                 <Link to='/register'>
-                    <p title="No worries! Click here and we'll get you set up in just one step.">don't have an account?</p>
+                    <p className= {styles.noAccount} title="No worries! Click here and we'll get you set up in just one step.">don't have an account?</p>
                 </Link>
             }
 

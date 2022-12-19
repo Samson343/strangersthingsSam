@@ -69,3 +69,31 @@ export async function login(name, password) {
     }
 
 }
+
+export async function createPost ( token, title, description, price, delivery ) {
+    try {
+        const response = await fetch (`${cohortURL}/posts`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                post: {
+                    title: title,
+                    description: description,
+                    price: price,
+                    willDeliver: delivery
+                }
+            })
+        })
+        const json = await response.json()
+
+        console.log(json)
+
+        return json
+
+    } catch (error) {
+        console.error(error)
+    }
+}

@@ -1,11 +1,12 @@
 import React from 'react'
 import styles from './NavHeader.module.css'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faUser } from '@fortawesome/free-solid-svg-icons'
 // import { faHouseUser } from '@fortawesome/free-solid-svg-icons'
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { faMessage, fa2 } from '@fortawesome/free-solid-svg-icons'
+import { faMessage} from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -24,7 +25,9 @@ export default function NavHeader () {
                     <span className={styles.menuContainers}>
                         <FontAwesomeIcon icon={faBars} />
                         <FontAwesomeIcon icon={faMessage} />
-                        <FontAwesomeIcon icon={faAddressCard} />
+                        <Link className = {styles.link} to="/createPost">
+                            <FontAwesomeIcon icon={faAddressCard} />
+                        </Link>
                     </span>
 
                 </span>

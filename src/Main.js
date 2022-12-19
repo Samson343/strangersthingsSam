@@ -27,6 +27,7 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
         <Featured 
             clickedPost = {featureKey}
             setShouldFeature = {setShouldFeature}
+            isAuthenticated = {isAuthenticated}
         />
         :
         <div className={styles.main}>

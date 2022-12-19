@@ -14,6 +14,13 @@
     
 }
 
+.link {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0
+}
+
 .navHeading {
     border-left: 2px solid lightgray;
     border-right: 2px solid lightgray;

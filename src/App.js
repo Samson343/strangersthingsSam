@@ -10,6 +10,7 @@ import RegisterForm from './RegisterForm';
 import { gatherPosts } from './apiIndex';
 import { useEffect, useState } from 'react';
 import '@fontsource/roboto/300.css';
+import CreatePost from './CreatePost';
 
 
 function App() {
@@ -53,6 +54,14 @@ function App() {
             token = {token}
             isAuthorized = {isAuthorized}
           />
+        </Route>
+
+        <Route path = "/createPost">
+          <NavHeader />
+          <CreatePost 
+            token = {token}
+          />
+
         </Route>
 
         <Footer />

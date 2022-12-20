@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
 import styles from './Featured.module.css'
 import { useState } from "react";
+import { deletePost } from "./apiIndex";
 
 
-const Featured = ({ clickedPost, setShouldFeature, isAuthenticated }) => {
+const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
     const [delivery, setDelivery] = useState("")
 
-    useEffect ( () => {
-    setDelivery(clickedPost.willDeliver ?
-        "Yes" : "No, pickup only")
+    useEffect(() => {
+        setDelivery(clickedPost.willDeliver ?
+            "Yes" : "No, pickup only")
     }, [])
-    
+
     // if (clickedPost.updatedAt) {
 
     // }
@@ -42,7 +43,18 @@ const Featured = ({ clickedPost, setShouldFeature, isAuthenticated }) => {
                 
                 {
                     clickedPost.isAuthor &&
-                    <button className= {styles.deleteButton}>Delete</button>
+                    <button className= {styles.deleteButton} onClick = { async () => {
+                           await deletePost(id, token)
+                              .then(() => {
+                                setTimeout(setShouldFeature(false), 1000)
+                                
+                                })
+                              .catch(console.error)
+                        
+                        }
+                    }
+                    
+                    >Delete</button>
                 }
 
                 <div className= {styles.buttonWrapper}>

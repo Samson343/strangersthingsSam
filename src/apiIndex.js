@@ -102,3 +102,21 @@ export async function createPost ( token, title, description, price, delivery ) 
         console.error(error)
     }
 }
+
+export async function deletePost (id, token) {
+    try {
+    const response = await fetch (`${cohortURL}/posts/${id}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }    
+    })
+    const json = await response.json()
+
+    console.log("this is delete", json)
+    }
+    catch (error) {
+        console.error(error)
+    }
+}

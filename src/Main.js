@@ -19,7 +19,7 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
                     console.log(error)
                 })
 
-    }, [])
+    }, [shouldFeature])
 
 
     return (
@@ -27,7 +27,10 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
         <Featured 
             clickedPost = {featureKey}
             setShouldFeature = {setShouldFeature}
-            isAuthenticated = {isAuthenticated}
+            // isAuthenticated = {isAuthenticated}
+            token = {token}
+            id = {featureKey._id}
+
         />
         :
         <div className={styles.main}>

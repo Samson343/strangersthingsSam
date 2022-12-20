@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createPost } from "./apiIndex";
 import { useState } from "react";
 import styles from './CreatePost.module.css'
+import { Redirect } from "react-router";
 
 const CreatePost = ({ token }) => {
 
@@ -10,7 +11,8 @@ const CreatePost = ({ token }) => {
     const [pPrice, setpPrice] = useState('')
     const [pLocation, setpLocation] = useState('')
     const [pDelivery, setpDelivery] = useState(false)
-
+    const [createSuccess, setCreateSuccess] = useState(false)
+    let redirect = false
 
     const onChangeHandler = (setter, event) => {
         setter(event.target.value)
@@ -22,8 +24,15 @@ const CreatePost = ({ token }) => {
             console.log(pTitle, pDescription, pPrice, pLocation, pDelivery, token)
             try {
                 await createPost ( token, pTitle, pDescription, pPrice, pDelivery )
-                    .then(( data ) => {
+                    .then((data) => {
                         console.log(data)
+                        setpTitle('')
+                        setpDescription('')
+                        setpPrice('')
+                        setpLocation('')
+                        setpDelivery('')
+                        setCreateSuccess(true)
+                        setTimeout (() => {console.log("timeout triggered"); redirect = true}, 3000)
                     })
                 
             } catch (error) {
@@ -62,6 +71,16 @@ const CreatePost = ({ token }) => {
                 <input type="checkBox" name="willDeliver" checked={pDelivery} onChange={event => { setpDelivery(event.target.checked) }}>
                 </input>
             </label>
+            {
+                createSuccess &&
+                <>
+                <p className= {styles.success}>Success! Redirecting you to the main page...</p>
+
+                {
+                setTimeout(() => {return <Redirect to = "/main" />}, 3500)
+                }
+               </>
+            }
             <button className= {styles.submitButton}>Create Post</button>
            
         </form>

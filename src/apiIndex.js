@@ -3,10 +3,15 @@
 export const cohortURL = "https://strangers-things.herokuapp.com/api/2209-ftb-et-web-pt"
 
 
-export async function gatherPosts () {
+export async function gatherPosts (token) {
 
     try {
-        const response = await fetch(`${cohortURL}/posts`)
+        const response = await fetch(`${cohortURL}/posts`, {
+            method: "GET",
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
         const data = await response.json()
         
 

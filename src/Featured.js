@@ -11,9 +11,11 @@ const Featured = ({ clickedPost, setShouldFeature, isAuthenticated }) => {
         "Yes" : "No, pickup only")
     }, [])
     
-    if (clickedPost.updatedAt) {
+    // if (clickedPost.updatedAt) {
 
-    }
+    // }
+
+    
 
     return (
         <main className = {styles.main}>
@@ -38,13 +40,19 @@ const Featured = ({ clickedPost, setShouldFeature, isAuthenticated }) => {
                 </p>
                 <p className={styles.seller}><span className= {styles.spans}> Seller: &nbsp;</span> {clickedPost.author.username}</p>
                 
-            
+                {
+                    clickedPost.isAuthor &&
+                    <button className= {styles.deleteButton}>Delete</button>
+                }
+
+                <div className= {styles.buttonWrapper}>
                 <button className= {styles.submitButton} onClick = {() => {
                         setShouldFeature (false)
                    }
                 }
-                > Homepage</button>
+                > Back</button>
                 <button className= {styles.submitButton}>Message Seller</button>
+                </div>
             </div>
         </main>
     )

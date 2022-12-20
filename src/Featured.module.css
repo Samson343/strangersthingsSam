@@ -44,10 +44,11 @@
 }
 .seller {
     font-size: 16px;
+    margin-bottom: 4em;
 }
 
 .submitButton {
-    margin-top: 1em;
+    /* margin-left: 1.5em; */
     /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace; */
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -70,7 +71,25 @@
 .spans {
     color: white;
 }
+.buttonWrapper {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.deleteButton {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    align-self: flex-end;
+    display: inline;
+    font-size: 0.44em;
+    box-shadow: 1px 1px 1px 1px;
+    background-color: #cfd4e3;
+    color: rgb(154, 3, 3);
+    /* border: none; */
+    padding: 2px 11px 2px;
+    border-radius: 1%;
+}
 
 
 .main::-webkit-scrollbar {

@@ -10,7 +10,7 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
     const [featureKey, setFeatureKey] = useState('')
 
     useEffect(() => {
-        gatherPosts()
+        gatherPosts(token)
                 .then(data => {
                     setPosts(data.data.posts)
                     console.log(token)

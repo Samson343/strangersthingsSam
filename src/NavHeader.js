@@ -23,8 +23,12 @@ export default function NavHeader () {
                 <span>
 
                     <span className={styles.menuContainers}>
+                        <Link to = "/main" className= {styles.link}>
                         <FontAwesomeIcon icon={faBars} />
+                        </Link>
+                        <Link className= {styles.link}>
                         <FontAwesomeIcon icon={faMessage} />
+                        </Link>
                         <Link className = {styles.link} to="/createPost">
                             <FontAwesomeIcon icon={faAddressCard} />
                         </Link>

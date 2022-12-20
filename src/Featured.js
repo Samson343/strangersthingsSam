@@ -3,7 +3,7 @@ import styles from './Featured.module.css'
 import { useState } from "react";
 
 
-const Featured = ({ clickedPost, setShouldFeature }) => {
+const Featured = ({ clickedPost, setShouldFeature, isAuthenticated }) => {
     const [delivery, setDelivery] = useState("")
 
     useEffect ( () => {
@@ -39,12 +39,12 @@ const Featured = ({ clickedPost, setShouldFeature }) => {
                 <p className={styles.seller}><span className= {styles.spans}> Seller: &nbsp;</span> {clickedPost.author.username}</p>
                 
             
-                <button className= {styles.backButton} onClick = {() => {
+                <button className= {styles.submitButton} onClick = {() => {
                         setShouldFeature (false)
                    }
                 }
                 > Homepage</button>
-                <button className= {styles.messageButton}>Message Seller</button>
+                <button className= {styles.submitButton}>Message Seller</button>
             </div>
         </main>
     )

@@ -15,7 +15,7 @@
 .postCard {
     border: 2px solid white;
     width: 20em;
-    height: 15em;
+    height: 16em;
     margin: 10px 10px;
     border-radius: 5%;
     box-shadow: 10px 10px 10px 3px rgb(35, 35, 35);
@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-self: center;
 
 }
 .price{
@@ -42,27 +43,44 @@
     padding-bottom: 6px;
     margin-bottom: 18px;
 }
-.seller {
-    font-size: 16px;
-}
-.backButton {
-   align-self: flex-end;
-   min-width: 70px;
-   border-radius: 5%;
-   box-shadow: 8px 8px 8px 1px rgb(35, 35, 35);
-   background-color: rgb(205, 203, 203);
-   font-weight: 500;
-   font-family: Roboto, monospace;
-   padding: 2px 8px 2px;
-   
-}
-.createButton {
+
+.submitButton {
+    margin-top: 1.5em;
+    /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
     align-self: flex-end;
-    min-width: 70px;
-   border-radius: 5%;
-   box-shadow: 8px 8px 8px 1px rgb(35, 35, 35);
-   background-color: rgb(205, 203, 203);
-   font-weight: 500;
-   font-family: Roboto, monospace;
-   padding: 2px 8px 2px;
+    display: inline;
+    font-size: 0.44em;
+    box-shadow: 1px 1px 1px 1px;
+    background-color: rgb(212, 206, 206);
+    border: none;
+    padding: 2px 11px 2px;
+    border-radius: 1%; 
+}
+.submitButton:hover {
+    background-color: rgb(63, 145, 160);
+    color: white;
+    box-shadow: 1px 1px 1px 1px darkgray;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: large;
+    border-bottom: 1px solid rgb(136, 134, 134);
+}
+.input {
+    text-align: center;
+    border-radius: 1.5%;
+    max-height: 1.5em;
+    box-shadow: 3px 3px 3px 3px rgb(35, 35, 35);
+    margin-bottom: 3px;
+}
+.header {
+    border-bottom: 1px solid rgb(213, 209, 209);
+    padding-bottom: 1px;
 }

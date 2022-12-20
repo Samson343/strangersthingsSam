@@ -32,34 +32,38 @@ const CreatePost = ({ token }) => {
 
         }
         }>
-            <h4>Create New Post</h4>
-            <label>
+            <h4 className= {styles.header}>Create New Post</h4>
+            
+            <label className= {styles.inputs}>
                 Title
-            </label>
-            <input name = "title" value = {pTitle} onChange = {event => onChangeHandler(setpTitle, event)} required>
+            <input className={styles.input} name = "title" value = {pTitle} onChange = {event => onChangeHandler(setpTitle, event)} required>
             </input>
-            <label>
+            </label>
+            <label className= {styles.inputs}>
                 Description
-            </label>
-            <input name = "description" value = {pDescription} onChange = {event => onChangeHandler(setpDescription, event)} required>
+                <input className={styles.input} name = "description" value = {pDescription} onChange = {event => onChangeHandler(setpDescription, event)} required>
             </input>
-            <label>
+            </label>
+            
+            <label className= {styles.inputs}>
                 Price
-            </label>
-            <input name = "price" value = {pPrice} onChange = {event => onChangeHandler(setpPrice, event)} required>
+                <input className={styles.input} name = "price" value = {pPrice} onChange = {event => onChangeHandler(setpPrice, event)} required>
             </input>
-            <label>
+            </label>
+        
+            <label className= {styles.inputs}>
                 Location of item
-            </label>
-            <input name = "location" value = {pLocation} onChange = {event => onChangeHandler(setpLocation, event)}>
+                <input className={styles.input} name = "location" value = {pLocation} onChange = {event => onChangeHandler(setpLocation, event)}>
             </input>
-            <label>
+            </label>
+            
+            <label className= {styles.inputs}>
                 Willing to deliver?
+                <input type="checkBox" name="willDeliver" checked={pDelivery} onChange={event => { setpDelivery(event.target.checked) }}>
+                </input>
             </label>
-            <input type = "checkBox" name = "willDeliver" checked = {pDelivery} onChange = {event => { setpDelivery(event.target.checked)}}>      
-            </input>
-            <button className= {styles.createButton}>Create</button>
-
+            <button className= {styles.submitButton}>Create Post</button>
+           
         </form>
     )
 

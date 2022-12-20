@@ -45,27 +45,28 @@
 .seller {
     font-size: 16px;
 }
-.backButton {
-   align-self: flex-end;
-   min-width: 70px;
-   border-radius: 5%;
-   box-shadow: 8px 8px 8px 1px rgb(35, 35, 35);
-   background-color: rgb(205, 203, 203);
-   font-weight: 500;
-   font-family: Roboto, monospace;
-   padding: 2px 8px 2px;
-   
-}
-.messageButton {
+
+.submitButton {
+    margin-top: 1em;
+    /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
     align-self: flex-end;
-    min-width: 70px;
-   border-radius: 5%;
-   box-shadow: 8px 8px 8px 1px rgb(35, 35, 35);
-   background-color: rgb(205, 203, 203);
-   font-weight: 500;
-   font-family: Roboto, monospace;
-   padding: 2px 8px 2px;
+    display: inline;
+    font-size: 0.44em;
+    box-shadow: 1px 1px 1px 1px;
+    background-color: rgb(212, 206, 206);
+    border: none;
+    padding: 2px 11px 2px;
+    border-radius: 1%; 
 }
+.submitButton:hover {
+    background-color: rgb(63, 145, 160);
+    color: white;
+    box-shadow: 1px 1px 1px 1px darkgray;
+}
+
 .spans {
     color: white;
 }

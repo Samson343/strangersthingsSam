@@ -120,3 +120,20 @@ export async function deletePost (id, token) {
         console.error(error)
     }
 }
+
+export async function myPosts (token) {
+    try {
+        const response = await fetch (`${cohortURL}/users/me`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        const json = await response.json()
+
+        console.log('This is myPosts', json)
+        return json
+    } catch (error) {
+        throw error
+    }
+}

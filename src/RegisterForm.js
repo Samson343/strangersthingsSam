@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Redirect } from "react-router";
 
 
-const RegisterForm = ({ setToken, isAuthorized, setIsAuthorized, renderCondition, setRenderCondition }) => {
+const RegisterForm = ({ renderCondition, setRenderCondition }) => {
     
     const [registration, setRegistration] = useState ({}) 
     const [userName, setUserName] = useState ('')

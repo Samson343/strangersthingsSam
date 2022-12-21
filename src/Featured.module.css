@@ -83,19 +83,19 @@
     align-self: flex-end;
     display: inline;
     font-size: 0.44em;
-    box-shadow: 1px 1px 1px 1px;
+    box-shadow: 1px 1px 1px;
     background-color: #efeff1;
     color: rgb(154, 3, 3);
     /* border: none; */
     padding: 2px 11px 2px;
     border-radius: 1%;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
 }
 .deleteButton:hover {
     /* background-color: rgb(63, 145, 160); */
     background-color: rgb(168, 70, 75);
     color: white;
-    box-shadow: 1px 1px 1px 1px darkgray;
+    box-shadow: 1px 1px 1px darkgray;
 }
 
 

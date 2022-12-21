@@ -11,6 +11,7 @@ import { gatherPosts } from './apiIndex';
 import { useEffect, useState } from 'react';
 import '@fontsource/roboto/300.css';
 import CreatePost from './CreatePost';
+import ProfilePage from './ProfilePage'
 
 
 function App() {
@@ -54,6 +55,14 @@ function App() {
             token = {token}
             isAuthorized = {isAuthorized}
           />
+        </Route>
+
+        <Route path = '/profile'>
+          <NavHeader />
+          <ProfilePage 
+            token = {token}
+          />
+
         </Route>
 
         <Route path = "/createPost">

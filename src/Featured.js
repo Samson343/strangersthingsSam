@@ -76,7 +76,8 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                 }
                 > Back</button>
 
-                    {!isSendButton ?
+                { !clickedPost.isAuthor ?
+                    !isSendButton ?
 
                         <button className={styles.submitButton} onClick={() => {
                             setIsMessageBox(true)
@@ -89,7 +90,8 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                             sendMessage(id, token, postMessage)
                             setPostMessage('')
                         }}>Send</button>
-                    }
+                    : <></>
+                }
                 </div>
             </div>
         </main>

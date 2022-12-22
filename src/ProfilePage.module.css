@@ -1,6 +1,6 @@
 .main {   
     overflow-y: scroll;
-    height: 72vh;
+    height: 85vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -48,8 +48,9 @@
 .heading {
     font-size: x-large;
     font-weight: 400;
-    margin: 0;
+    margin-left: 150px;
     padding: 0;
+    align-self: flex-start;
 }
 .buttons {
     justify-self: flex-end;

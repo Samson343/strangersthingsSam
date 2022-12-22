@@ -7,6 +7,7 @@ import styles from './ProfilePage.module.css'
 
 const Profile = ({ token }) => {
     const [myItems, setMyItems] = useState ([])
+    const [myMessages, setMyMessages] = useState ([])
 
     useEffect(() => {
         myPosts(token)
@@ -23,7 +24,7 @@ const Profile = ({ token }) => {
 
     return (
         <>
-        <h5 className= {styles.heading}>Profile Homepage</h5>
+        <h5 className= {styles.heading}>My Posts</h5>
         <div className= {styles.main}>
             {
                 myItems.map((elem, index) => {
@@ -41,6 +42,15 @@ const Profile = ({ token }) => {
                                 <div className= {styles.buttonWrapper}>
                                 <button className= {styles.buttons}>delete</button>
                                 <button className= {styles.buttons}>edit</button>
+                                {
+                                    elem.messages.length !== 0 &&
+                                    <button className= {styles.buttons} onClick = {() => {
+                                        //need to do something with messages here
+                                    }}>View Messages</button>
+                                }
+                                
+
+                                
                                 </div>
                             </div>
                         </div>

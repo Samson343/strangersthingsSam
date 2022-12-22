@@ -99,8 +99,8 @@
 }
 .messageBox {
     margin-left: 30em;
+    text-align: center;
 }
-
 
 .main::-webkit-scrollbar {
     border-radius: 30%;

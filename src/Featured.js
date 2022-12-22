@@ -63,7 +63,7 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
 
                 {
                     isMessageBox && 
-                    <input className = {styles.messageBox}type = "text" name = "message" value = {postMessage} onChange = {(e) => {
+                    <input placeholder ="send a message to the seller" className = {styles.messageBox} type = "text" name = "message" value = {postMessage} onChange = {(e) => {
                         setPostMessage(e.target.value)
                     
                     }}></input>
@@ -87,6 +87,7 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                         :
                         <button className={styles.submitButton} onClick = {() => {
                             sendMessage(id, token, postMessage)
+                            setPostMessage('')
                         }}>Send</button>
                     }
                 </div>

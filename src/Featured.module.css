@@ -97,6 +97,9 @@
     color: white;
     box-shadow: 1px 1px 1px darkgray;
 }
+.messageBox {
+    margin-left: 30em;
+}
 
 
 .main::-webkit-scrollbar {

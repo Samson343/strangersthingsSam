@@ -1,11 +1,15 @@
 import React, { useEffect } from "react";
 import styles from './Featured.module.css'
 import { useState } from "react";
-import { deletePost } from "./apiIndex";
+import { deletePost, sendMessage } from "./apiIndex";
+
 
 
 const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
     const [delivery, setDelivery] = useState("")
+    const [isMessageBox, setIsMessageBox] = useState(false)
+    const [postMessage, setPostMessage] = useState ('')
+    const [isSendButton, setIsSendButton] = useState (false)
 
     useEffect(() => {
         setDelivery(clickedPost.willDeliver ?
@@ -57,13 +61,34 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                     >Delete</button>
                 }
 
+                {
+                    isMessageBox && 
+                    <input className = {styles.messageBox}type = "text" name = "message" value = {postMessage} onChange = {(e) => {
+                        setPostMessage(e.target.value)
+                    
+                    }}></input>
+                }
+
                 <div className= {styles.buttonWrapper}>
                 <button className= {styles.submitButton} onClick = {() => {
-                        setShouldFeature (false)
+                    setShouldFeature (false)
                    }
                 }
                 > Back</button>
-                <button className= {styles.submitButton}>Message Seller</button>
+
+                    {!isSendButton ?
+
+                        <button className={styles.submitButton} onClick={() => {
+                            setIsMessageBox(true)
+                            setIsSendButton(true)
+
+                            // postMessage(clickedPost._id, token)
+                        }}>Message Seller</button>
+                        :
+                        <button className={styles.submitButton} onClick = {() => {
+                            sendMessage(id, token, postMessage)
+                        }}>Send</button>
+                    }
                 </div>
             </div>
         </main>

@@ -14,7 +14,7 @@
 
 .postCards {
     border: 2px solid white;
-    width: 12em;
+    width: 13em;
     height: 10em;
     margin: 10px 10px;
     border-radius: 5%;
@@ -37,6 +37,7 @@
 .title {
     border-bottom: 0.5px solid lightgray;
     padding-bottom: 6px;
+    font-weight: 500;
 }
 .seller {
     font-size: 16px;

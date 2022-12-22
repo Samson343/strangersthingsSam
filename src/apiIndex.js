@@ -137,3 +137,25 @@ export async function myPosts (token) {
         throw error
     }
 }
+
+export async function sendMessage (postID, token, message) {
+    try {
+        const response = await fetch (`${cohortURL}/posts/${postID}/messages`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                message: {
+                    content: message
+                }
+            })
+        })
+        const json = await response.json()
+        console.log(json)
+
+    } catch (error) {
+        console.error(error)
+    }
+}

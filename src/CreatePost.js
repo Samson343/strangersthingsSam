@@ -41,32 +41,32 @@ const CreatePost = ({ token }) => {
 
         }
         }>
-            <h4 className= {styles.header}>Create New Post</h4>
-            
-            <label className= {styles.inputs}>
+            <h4 className={styles.header}>Create New Post</h4>
+
+            <label className={styles.inputs}>
                 Title
-            <input className={styles.input} name = "title" value = {pTitle} onChange = {event => onChangeHandler(setpTitle, event)} required>
-            </input>
+                <input className={styles.input} name="title" value={pTitle} onChange={event => onChangeHandler(setpTitle, event)} required>
+                </input>
             </label>
-            <label className= {styles.inputs}>
+            <label className={styles.inputs}>
                 Description
-                <input className={styles.input} name = "description" value = {pDescription} onChange = {event => onChangeHandler(setpDescription, event)} required>
-            </input>
+                <input className={styles.input} name="description" value={pDescription} onChange={event => onChangeHandler(setpDescription, event)} required>
+                </input>
             </label>
-            
-            <label className= {styles.inputs}>
+
+            <label className={styles.inputs}>
                 Price
-                <input className={styles.input} name = "price" value = {pPrice} onChange = {event => onChangeHandler(setpPrice, event)} required>
-            </input>
+                <input className={styles.input} name="price" value={pPrice} onChange={event => onChangeHandler(setpPrice, event)} required>
+                </input>
             </label>
-        
-            <label className= {styles.inputs}>
+
+            <label className={styles.inputs}>
                 Location of item
-                <input className={styles.input} name = "location" value = {pLocation} onChange = {event => onChangeHandler(setpLocation, event)}>
-            </input>
+                <input className={styles.input} name="location" value={pLocation} onChange={event => onChangeHandler(setpLocation, event)}>
+                </input>
             </label>
-            
-            <label className= {styles.inputs}>
+
+            <label className={styles.inputs}>
                 Willing to deliver?
                 <input type="checkBox" name="willDeliver" checked={pDelivery} onChange={event => { setpDelivery(event.target.checked) }}>
                 </input>
@@ -74,15 +74,15 @@ const CreatePost = ({ token }) => {
             {
                 createSuccess &&
                 <>
-                <p className= {styles.success}>Success! Redirecting you to the main page...</p>
+                    <p className={styles.success}>Success! Redirecting you to the main page...</p>
 
-                {
-                setTimeout(() => {return <Redirect to = "/main" />}, 3500)
-                }
-               </>
+                    {
+                        setTimeout(() => { return <Redirect to="/main" /> }, 3500)
+                    }
+                </>
             }
-            <button className= {styles.submitButton}>Create Post</button>
-           
+            <button className={styles.submitButton}>Create Post</button>
+
         </form>
     )
 

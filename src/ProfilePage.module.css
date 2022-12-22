@@ -19,9 +19,12 @@
     margin: 10px 10px;
     border-radius: 1%;
     box-shadow: 10px 10px 10px 3px rgb(35, 35, 35);
-    background-color: #282c34;
+    /* background-color: #282c34; */
+    background-color: rgb(106, 100, 100);
     text-align: left;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 
 }
 .price{
@@ -49,7 +52,8 @@
     padding: 0;
 }
 .buttons {
-    margin-left: 10px;
+    justify-self: flex-end;
+    margin-right: 10px;
 }
 
 

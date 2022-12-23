@@ -9,7 +9,7 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
     const [delivery, setDelivery] = useState("")
     const [isMessageBox, setIsMessageBox] = useState(false)
     const [postMessage, setPostMessage] = useState ('')
-    const [isSendButton, setIsSendButton] = useState (false)
+    const [renderSendButton, setRenderSendButton] = useState (false)
 
     useEffect(() => {
         setDelivery(clickedPost.willDeliver ?
@@ -44,22 +44,6 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                   }
                 </p>
                 <p className={styles.seller}><span className= {styles.spans}> Seller: &nbsp;</span> {clickedPost.author.username}</p>
-                
-                {
-                    clickedPost.isAuthor &&
-                    <button className= {styles.deleteButton} onClick = { async () => {
-                           await deletePost(id, token)
-                              .then(() => {
-                                setTimeout(setShouldFeature(false), 1000)
-                                
-                                })
-                              .catch(console.error)
-                        
-                        }
-                    }
-                    
-                    >Delete</button>
-                }
 
                 {
                     isMessageBox && 
@@ -75,23 +59,34 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                    }
                 }
                 > Back</button>
+                    {/* if you are not the author, render a message button that switches to a "send" button after it's a clicked */}
+                    {!clickedPost.isAuthor ?
+                        !renderSendButton ?
 
-                { !clickedPost.isAuthor ?
-                    !isSendButton ?
+                            <button className={styles.submitButton} onClick={() => {
+                                setIsMessageBox(true)
+                                setRenderSendButton(true)
 
-                        <button className={styles.submitButton} onClick={() => {
-                            setIsMessageBox(true)
-                            setIsSendButton(true)
+                                // postMessage(clickedPost._id, token)
+                            }}>Message Seller</button>
+                            :
+                            <button className={styles.submitButton} onClick={() => {
+                                sendMessage(id, token, postMessage)
+                                setPostMessage('')
+                            }}>Send</button>
+                        : clickedPost.isAuthor &&
+                        <button className={styles.deleteButton} onClick={async () => {
+                            await deletePost(id, token)
+                                .then(() => {
+                                    setTimeout(setShouldFeature(false), 1000)
 
-                            // postMessage(clickedPost._id, token)
-                        }}>Message Seller</button>
-                        :
-                        <button className={styles.submitButton} onClick = {() => {
-                            sendMessage(id, token, postMessage)
-                            setPostMessage('')
-                        }}>Send</button>
-                    : <></>
-                }
+                                })
+                                .catch(console.error)
+
+                        }
+                        }
+                        >Delete</button>
+                    }
                 </div>
             </div>
         </main>

@@ -8,6 +8,7 @@ import styles from './ProfilePage.module.css'
 const Profile = ({ token }) => {
     const [myItems, setMyItems] = useState ([])
     const [myMessages, setMyMessages] = useState ([])
+    const [renderMessages, setRenderMessages] = useState (false)
 
     useEffect(() => {
         myPosts(token)
@@ -45,10 +46,40 @@ const Profile = ({ token }) => {
                                 {
                                     elem.messages.length !== 0 &&
                                     <button className= {styles.buttons} onClick = {() => {
-                                        //need to do something with messages here
+                                        renderMessages === true ?
+                                        setRenderMessages (false) :
+                                        setRenderMessages(true);  
+                                        setMyMessages(elem.messages)
+                                        
+                                        console.log('this is my messages', myMessages)
+                                        console.log('this is the elem', elem)
                                     }}>View Messages</button>
                                 }
-                                
+                                {
+                                    renderMessages && elem.messages.length !== 0 && 
+                                    //the issue here is that if one message array has more messages than the other then it tries to read an _id that doesn't exist
+                                    
+                                    myMessages.map(((message, index) => {
+                                        return (
+                                            myMessages[index]._id === elem.messages[index]._id &&
+                                             
+                                             <div className={styles.messagesBox}>
+                                                    <span key={index} className={styles.messages}>{message.content} &nbsp;
+                                                        <span className={styles.seller}>From: &nbsp;{message.fromUser.username}</span>
+                                                    </span> 
+            
+                                            </div> 
+                                        )
+                                      })
+                                    )
+                                      
+                                    // myMessages.map(((message, index) => {
+                                    //     return (
+                                    //         <p key = {index}>{message.content}</p>     
+                                    //     )
+                                    //   })
+                                    // )
+                                }
 
                                 
                                 </div>

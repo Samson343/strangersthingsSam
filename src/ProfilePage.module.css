@@ -56,8 +56,24 @@
     justify-self: flex-end;
     margin-right: 10px;
 }
-
-
+.messagesBox {
+    display: flex;
+    flex-direction: column;
+    color: grey;
+    background-color: white;
+    font-size: medium;
+    margin-top: 20px;
+    padding: 5px;
+    max-height: 4em;
+}
+.messages{
+    color: grey;
+    display: inline;
+}
+.seller {
+    display: inline;
+    color: blue;
+}
 
 .main::-webkit-scrollbar {
     border-radius: 30%;

@@ -58,27 +58,24 @@ const Profile = ({ token }) => {
                                 {
                                     renderMessages && elem.messages.length !== 0 && 
                                     //the issue here is that if one message array has more messages than the other then it tries to read an _id that doesn't exist
-                                    
-                                    myMessages.map(((message, index) => {
-                                        return (
-                                            myMessages[index]._id === elem.messages[index]._id &&
-                                             
-                                             <div className={styles.messagesBox}>
-                                                    <span key={index} className={styles.messages}>{message.content} &nbsp;
-                                                        <span className={styles.seller}>From: &nbsp;{message.fromUser.username}</span>
-                                                    </span> 
-            
-                                            </div> 
-                                        )
-                                      })
-                                    )
-                                      
-                                    // myMessages.map(((message, index) => {
-                                    //     return (
-                                    //         <p key = {index}>{message.content}</p>     
-                                    //     )
-                                    //   })
-                                    // )
+                                        <div className= {styles.messageWrapper}>
+                                            {
+                                                myMessages.map(((message, index) => {
+                                                    return (
+                                                        myMessages[0]._id === elem.messages[0]._id &&
+
+                                                        <div className={styles.messagesBox}>
+                                                            <span key={index} className={styles.messages}>{message.content} &nbsp;
+                                                                <span className={styles.seller}>From: &nbsp;{message.fromUser.username}</span>
+                                                            </span>
+
+                                                        </div>
+                                                    )
+                                                })
+                                                )
+                                            }
+                                        </div>   
+                                   
                                 }
 
                                 

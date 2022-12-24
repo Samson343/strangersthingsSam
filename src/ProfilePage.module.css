@@ -1,6 +1,6 @@
 .main {   
     overflow-y: scroll;
-    height: 85vh;
+    height: 79vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -51,6 +51,7 @@
     font-weight: 400;
     margin-left: 150px;
     padding: 0;
+    margin: 0 0 0 50px;
     align-self: flex-start;
 }
 .buttons {

@@ -11,7 +11,7 @@ import { gatherPosts } from './apiIndex';
 import { useEffect, useState } from 'react';
 import '@fontsource/roboto/300.css';
 import CreatePost from './CreatePost';
-import ProfilePage from './ProfilePage'
+import ProfilePage from './ProfilePage';
 
 
 function App() {

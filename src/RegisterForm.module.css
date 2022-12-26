@@ -55,7 +55,6 @@ p {
     font-size: 0.4em;
     flex-basis: 0px;
     color:rgb(146, 146, 229);
-    cursor:help;
     user-select: none;
 }
 .botMessage {

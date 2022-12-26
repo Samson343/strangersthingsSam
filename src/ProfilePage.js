@@ -67,7 +67,9 @@ const Profile = ({ token }) => {
                                                         <div className={styles.messagesBox}>
                                                             <span key={index} className={styles.messages}>{message.content} &nbsp;
                                                                 <span className={styles.seller}>From: &nbsp;{message.fromUser.username}</span>
+                                                                <button title="reply?" className= {styles.replyButton}> ... </button>
                                                             </span>
+                                                            
 
                                                         </div>
                                                     )

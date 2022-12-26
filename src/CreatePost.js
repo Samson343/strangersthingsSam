@@ -12,11 +12,17 @@ const CreatePost = ({ token }) => {
     const [pLocation, setpLocation] = useState('')
     const [pDelivery, setpDelivery] = useState(false)
     const [createSuccess, setCreateSuccess] = useState(false)
-    let redirect = false
+    const [redirect, setRedirect] = useState(false)
 
     const onChangeHandler = (setter, event) => {
         setter(event.target.value)
     }
+
+    useEffect (() => {
+        if (createSuccess) {
+                setTimeout(() => {return setRedirect(true)}, 3500)
+        }
+    }, [createSuccess])
 
     return (
         <form className = { styles.postCard }onSubmit = { async (e) => {
@@ -75,11 +81,10 @@ const CreatePost = ({ token }) => {
                 createSuccess &&
                 <>
                     <p className={styles.success}>Success! Redirecting you to the main page...</p>
-
-                    {
-                        setTimeout(() => { return <Redirect to="/main" /> }, 3500)
-                    }
                 </>
+            }
+            {   redirect &&
+                <Redirect to="/main" />
             }
             <button className={styles.submitButton}>Create Post</button>
 

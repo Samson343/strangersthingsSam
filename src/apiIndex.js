@@ -159,3 +159,29 @@ export async function sendMessage (postID, token, message) {
         console.error(error)
     }
 }
+
+export async function editPost (id, title, description, price, delivery, token) {
+    try {
+        const response = await fetch (`${cohortURL}/posts/${id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                post: {
+                    title: title,
+                    description: description,
+                    price: price,
+                    willDeliver: delivery
+                }
+            })
+        })
+        const json = await response.json()
+
+        console.log("this is the edit response", json)
+        }
+    catch (error) {
+        console.error(error)
+    }
+}

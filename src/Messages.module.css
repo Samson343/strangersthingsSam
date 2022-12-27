@@ -11,7 +11,7 @@
     width: 15em;
     height: 12em;
     margin: 10px 10px;
-    border-radius: 5%;
+    border-radius: 1%;
     box-shadow: 10px 10px 10px 3px rgb(35, 35, 35);
     background-color: #29344c;
     text-align: left;
@@ -34,7 +34,7 @@
 }
 
 .postCards::-webkit-scrollbar {
-    border-radius: 30%;
+    border-radius: 10%;
 }
 
 /* .postCards::-webkit-scrollbar-track-piece {
@@ -43,5 +43,4 @@
 } */
 ::-webkit-scrollbar-thumb {
     background-color: #d6dee1;
-    border-radius: 20%;
 }

@@ -20,7 +20,8 @@ const Messages = ({ postHolder, myMessages }) => {
             <span>
                 <input name="message" placeholder={`send a message to ${myMessages[1].fromUser.username}`} className={styles.messagebox}></input>
                 <button onClick={() => {
-                    alert("this page is for demo purposes only, our API doesn't currently support sending messages from the seller to the buyer!")
+                    alert("This page is for demo purposes only, our API doesn't currently support sending messages from the seller to the buyer!")
+                    
 
                 }
                 }>Send</button>

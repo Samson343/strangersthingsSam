@@ -16,9 +16,6 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
             "Yes" : "No, pickup only")
     }, [])
 
-    // if (clickedPost.updatedAt) {
-
-    // }
 
     
 

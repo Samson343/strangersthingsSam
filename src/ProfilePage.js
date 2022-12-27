@@ -59,9 +59,10 @@ const Profile = ({ token }) => {
                                             elem.messages.length !== 0 &&
                                             <button className={styles.buttons} onClick={() => {
                                                 renderMessages === true ?
-                                                    setRenderMessages(false) :
-                                                    setRenderMessages(true);
-                                                setMyMessages(elem.messages)
+                                                    setRenderMessages(false)
+                                                    :
+                                                      setRenderMessages(true);
+                                                      setMyMessages(elem.messages)
 
                                                 console.log('this is my messages', myMessages)
                                                 console.log('this is the elem', elem)
@@ -69,7 +70,7 @@ const Profile = ({ token }) => {
                                         }
                                         {
                                             renderMessages && elem.messages.length !== 0 &&
-                                            //the issue here is that if one message array has more messages than the other then it tries to read an _id that doesn't exist
+                                            
                                             <div className={styles.messageWrapper}>
                                                 {
                                                     myMessages.map(((message, index) => {

@@ -75,8 +75,7 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                         <button className={styles.deleteButton} onClick={async () => {
                             await deletePost(id, token)
                                 .then(() => {
-                                    setTimeout(setShouldFeature(false), 1000)
-
+                                    setTimeout(setShouldFeature(false), 2500)
                                 })
                                 .catch(console.error)
 

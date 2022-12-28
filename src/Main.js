@@ -44,7 +44,6 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
             // isAuthenticated = {isAuthenticated}
             token = {token}
             id = {featureKey._id}
-
         />
         :
            <>

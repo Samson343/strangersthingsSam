@@ -153,8 +153,8 @@ export async function sendMessage (postID, token, message) {
             })
         })
         const json = await response.json()
-        console.log(json)
 
+        return json
     } catch (error) {
         console.error(error)
     }

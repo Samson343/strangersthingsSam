@@ -10,27 +10,31 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
     const [isMessageBox, setIsMessageBox] = useState(false)
     const [postMessage, setPostMessage] = useState ('')
     const [renderSendButton, setRenderSendButton] = useState (false)
+    const [successMessage, setSuccessMessage] = useState (false)
 
     useEffect(() => {
         setDelivery(clickedPost.willDeliver ?
             "Yes" : "No, pickup only")
     }, [])
+    useEffect (() => {
+        if(successMessage) {
+            setTimeout( () => {setSuccessMessage(false)}, "3000")
+        }
+    }, [successMessage])
 
 
     
 
     return (
         <main className = {styles.main}>
-            <div className={styles.postCard} onClick={(e) => {
-
-            }
-            }>
+            <div className={styles.postCard}>
                 <h5 className={styles.title}>{clickedPost.title[0].toUpperCase() + clickedPost.title.slice(1)}</h5>
                 <p className={styles.description}>{clickedPost.description}</p>
                 <p className={styles.price}>Price: {clickedPost.price}</p>
                 <p > <span className= {styles.spans}>Location: &nbsp; </span>{clickedPost.location.split("[").join('').split(']').join('')}</p>
                 <p><span className= {styles.spans}>Willing to deliver: &nbsp;</span> {delivery}</p>
-                <p><span className= {styles.spans}> Date Created: &nbsp;</span> {clickedPost.updatedAt
+                <p><span className= {styles.spans}> Date Created: &nbsp;</span> {
+                    clickedPost.updatedAt
                     .split('')
                     .slice(5, 10)
                     .join('') 
@@ -41,6 +45,12 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                   }
                 </p>
                 <p className={styles.seller}><span className= {styles.spans}> Seller: &nbsp;</span> {clickedPost.author.username}</p>
+
+                {
+                    successMessage ? 
+                    <p className= {styles.successMessage}>Success! Your message is on the way to {clickedPost.author.username}</p>
+                    : <p className={styles.successMessage}>&nbsp;</p>
+                }
 
                 {
                     isMessageBox && 
@@ -58,17 +68,19 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                 > Back</button>
                     {/* if you are not the author, render a message button that switches to a "send" button after it's a clicked */}
                     {!clickedPost.isAuthor ?
-                        !renderSendButton ?
-
+                        !renderSendButton ? 
                             <button className={styles.submitButton} onClick={() => {
                                 setIsMessageBox(true)
                                 setRenderSendButton(true)
-
                                 // postMessage(clickedPost._id, token)
                             }}>Message Seller</button>
                             :
-                            <button className={styles.submitButton} onClick={() => {
-                                sendMessage(id, token, postMessage)
+                            <button className={styles.submitButton} onClick={ async () => {
+                                await sendMessage(id, token, postMessage).then((data) => {
+                                    data.success && setSuccessMessage(true);
+                                    
+                                    console.log(successMessage)  
+                                })
                                 setPostMessage('')
                             }}>Send</button>
                         : clickedPost.isAuthor &&
@@ -78,7 +90,6 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                                     setTimeout(setShouldFeature(false), 2500)
                                 })
                                 .catch(console.error)
-
                         }
                         }
                         >Delete</button>

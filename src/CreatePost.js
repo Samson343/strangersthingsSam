@@ -38,7 +38,7 @@ const CreatePost = ({ token }) => {
                         setpLocation('')
                         setpDelivery('')
                         setCreateSuccess(true)
-                        setTimeout (() => {console.log("timeout triggered"); redirect = true}, 3000)
+                        // setTimeout (() => {console.log("timeout triggered"); redirect = true}, 3000)
                     })
                 
             } catch (error) {

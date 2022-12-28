@@ -97,8 +97,13 @@
     box-shadow: 1px 1px 1px darkgray;
 }
 .messageBox {
-    margin-left: 30em;
     text-align: center;
+    margin-left: 25em;
+    margin-bottom: 8px;
+}
+.successMessage {
+    align-self: flex-end;
+    margin-bottom: 10px;
 }
 
 .main::-webkit-scrollbar {

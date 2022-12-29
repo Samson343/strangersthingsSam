@@ -43,6 +43,7 @@ const Profile = ({ token }) => {
             <Edit
               post = {postHolder}
               token = {token}
+              setRenderEdit = {setRenderEdit}
             />
             :
         <> 

@@ -16,15 +16,17 @@
 }
 .postCards {
     border: 2px solid white;
-    width: 22em;
-    height: 11em;
+    width: fit-content;
+    min-width: 15em;
+    height: fit-content;
+    min-height: 9em;
     margin: 10px 10px;
     border-radius: 1%;
     box-shadow: 10px 10px 10px 3px rgb(35, 35, 35);
     /* background-color: #282c34; */
     background-color: rgb(106, 100, 100);
     text-align: left;
-    padding: 20px;
+    padding: 20px 20px 12px;
     display: flex;
     flex-direction: column;
 
@@ -79,10 +81,14 @@
     display: inline;
     color: blue;
 }
-.replyButton {
-    align-self: flex-end;
-    margin-right: 5px;
-    margin-left: 10px;
+.backButton {
+}
+.buttonWrapper {
+    margin-top: 40px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: hidden;
 }
 
 .main::-webkit-scrollbar {

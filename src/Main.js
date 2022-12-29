@@ -47,7 +47,8 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
         />
         :
            <>
-                <div className={styles.searchWrapper}>       
+                <div className={styles.searchWrapper}>
+                    <span className={styles.heading}>For sale near you</span>       
                     <span className={styles.searchNav}>
                         {showSearchBar &&
                         <input placeholder="search by title, description, or seller's name" className={styles.searchbar} value = {searchValue} onChange = {(e) => {

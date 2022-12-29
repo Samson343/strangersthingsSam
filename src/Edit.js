@@ -1,16 +1,60 @@
 import React from "react";
 import styles from "./Edit.module.css"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Edit = ({ post, token }) => {
+const Edit = ({ post, token, setRenderEdit }) => {
+
+    const [editTitle, setEditTitle] = useState(false)
+    const [editDesc, setEditDesc] = useState(false)
+    const [editPrice, setEditPrice] = useState(false)
+    const [editLocation, setEditLoaction] = useState(false)
+    const [editDelivery, setEditDelivery] = useState (false)
+
+    const [titleUpdata, setTitleUpdate] = useState ('')
+    const [descUpdata, setDescUpdate] = useState ('')
+    const [priceUpdata, setPriceUpdate] = useState ('')
+    const [locationUpdata, setLocationUpdate] = useState ('')
+    const [deliveryUpdata, setDeliveryUpdate] = useState ('')
+
+
     return (
+        <>
+        <h5 className={styles.heading}>Edit/Update Post</h5>
         <div className={styles.main}>
             <div>
                 <div className={styles.postCards}>
-                    <h5 className={styles.title}>{post.title[0].toUpperCase() + post.title.slice(1)}</h5>
-                    <p className={styles.description}>{post.description}</p>
-                    <p className={styles.price}>Price: {post.price}</p>
-                    <p > <span className={styles.spans}>Location: &nbsp; </span>{post.location.split("[").join('').split(']').join('')}</p>
-                    <p><span className={styles.spans}>Willing to deliver: &nbsp;</span></p>
+                    { !editTitle ?
+                    <h5 className={styles.title}>{post.title[0].toUpperCase() + post.title.slice(1)} &nbsp;
+                        <button className={styles.editButtons} onClick={() => {
+                            setEditTitle(true)
+                        }}>...</button>
+                    </h5>
+                    : <div>
+                        <input className = {styles.editInput} placeholder={post.title[0].toUpperCase() + post.title.slice(1)}></input>
+                      </div>
+                    }
+                        
+                    <p className={styles.description}>{post.description} &nbsp;
+                        <button className={styles.editButtons} onClick={() => {
+                            setEditDesc(true)
+                        }}>...</button>
+                    </p>
+                    <p className={styles.price}>Price: {post.price} &nbsp;
+                    <button className={styles.editButtons} onClick={() => {
+                            setEditPrice(true)
+                        }}>...</button>
+                    </p>
+                    <p > <span className={styles.spans}>Location: &nbsp; </span>{post.location.split("[").join('').split(']').join('')} &nbsp;
+                    <button className={styles.editButtons} onClick={() => {
+                            setEditLoaction(true)
+                        }}>...</button>
+                    </p>
+                    <p><span className={styles.spans}>Willing to deliver: &nbsp;</span> &nbsp;
+                    <button className={styles.editButtons} onClick={() => {
+                            setEditDelivery(true)
+                        }}>...</button>
+                    </p>
                     <p><span className={styles.spans}> Date Created: &nbsp;</span> {
                         post.updatedAt
                             .split('')
@@ -20,20 +64,24 @@ const Edit = ({ post, token }) => {
                         + post.updatedAt.split("")
                             .slice(0, 4)
                             .join('')
-                    }
+                    } &nbsp;
+                    <button className={styles.editButtons} onClick={() => {
+
+                        }}>...</button>
                     </p>
 
 
                     <div className={styles.buttonWrapper}>
-                        <button>update post</button>
+                        <button className={styles.backButton} onClick = {() => {
+                            setRenderEdit(false)
+                        }}>back</button>
                         <button className={styles.buttons}>delete</button>
-                        <button className={styles.buttons}>back</button>
+                        <button>update post</button>  
                     </div>
                 </div>
             </div>
-            <input placeholder={post.title}></input>
         </div>
-
+        </>
     )
 }
 

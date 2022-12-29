@@ -14,17 +14,18 @@
 
 .postCard {
     border: 2px solid white;
-    width: 20em;
+    width: 19em;
     height: 15em;
     margin: 10px 10px;
     border-radius: 5%;
     box-shadow: 10px 10px 10px 3px rgb(35, 35, 35);
     background-color: #282c34;
     text-align: left;
-    padding: 20px 40px 20px 40px;
+    padding: 10px 40px 20px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: hidden;
 
 }
 .price{
@@ -44,7 +45,7 @@
 }
 .seller {
     font-size: 16px;
-    margin-bottom: 4em;
+    margin-bottom: 1em;
 }
 
 .submitButton {

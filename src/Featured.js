@@ -16,6 +16,7 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
         setDelivery(clickedPost.willDeliver ?
             "Yes" : "No, pickup only")
     }, [])
+    
     useEffect (() => {
         if(successMessage) {
             setTimeout( () => {setSuccessMessage(false)}, "3000")

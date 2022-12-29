@@ -1,0 +1,116 @@
+.main {   
+    overflow-y: scroll;
+    height: 79vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
+    flex-wrap: wrap;
+    align-self: center;
+    border-top: 1px solid white;
+    /* border-bottom: 1px solid white; */
+}
+
+.postCards {
+    border: 2px solid white;
+    width: 22em;
+    height: 11em;
+    margin: 10px 10px;
+    border-radius: 1%;
+    box-shadow: 10px 10px 10px 3px rgb(35, 35, 35);
+    /* background-color: #282c34; */
+    background-color: rgb(106, 100, 100);
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+.price{
+    color: white;
+    font-size: 18px;
+    font-weight:500;
+}
+.description {
+    color: white;
+    font-size: 17px;
+    font-style: italic;
+}
+.title {
+    margin-top: 15px;
+    border-bottom: 0.5px solid lightgray;
+    padding-bottom: 6px;
+    font-weight: 500;
+}
+.seller {
+    font-size: 16px;
+}
+.heading {
+    font-size: x-large;
+    font-weight: 400;
+    margin-left: 150px;
+    padding: 0;
+    margin: 0 0 0 50px;
+    align-self: flex-start;
+}
+.buttons {
+    justify-self: flex-end;
+    margin-right: 10px;
+}
+.messagesBox {
+    display: flex;
+    flex-direction: column;
+    color: grey;
+    background-color: white;
+    font-size: medium;
+    margin-top: 20px;
+    padding: 5px;
+    max-height: 4em;
+    margin-right: 20px;
+}
+.messages{
+    color: grey;
+    display: inline;
+}
+.seller {
+    display: inline;
+    color: blue;
+}
+.replyButton {
+    align-self: flex-end;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.main::-webkit-scrollbar {
+    border-radius: 30%;
+}
+
+.main::-webkit-scrollbar-track-piece {
+    background: rgb(77, 53, 53);
+    border-radius: 20%;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20%;
+}
+
+.messageWrapper {
+    margin: 15px 10px 10px;
+    max-height: 4em;
+    overflow-y: scroll;
+}
+
+.messageWrapper::-webkit-scrollbar {
+    border-radius: 30%;
+}
+
+.messageWrapper::-webkit-scrollbar-track-piece {
+    background: rgb(77, 53, 53);
+    border-radius: 20%;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20%;
+}

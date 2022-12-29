@@ -4,6 +4,8 @@ import { myPosts } from "./apiIndex";
 import { useState } from "react";
 import styles from './ProfilePage.module.css'
 import Messages from "./Messages";
+import { Link } from "react-router-dom";
+import Edit from "./Edit";
 
 
 const Profile = ({ token }) => {
@@ -12,6 +14,7 @@ const Profile = ({ token }) => {
     const [renderMessages, setRenderMessages] = useState(false)
     const [shouldReply, setShouldReply] = useState (false)
     const [postHolder, setPostHolder] = useState ('')
+    const [renderEdit, setRenderEdit] = useState (false)
 
     useEffect(() => {
         myPosts(token)
@@ -36,6 +39,12 @@ const Profile = ({ token }) => {
             />
 
             :
+        renderEdit ?
+            <Edit
+              post = {postHolder}
+              token = {token}
+            />
+            :
         <> 
             <h5 className={styles.heading}>My Posts</h5>
             <div className={styles.main}>
@@ -54,7 +63,14 @@ const Profile = ({ token }) => {
 
                                     <div className={styles.buttonWrapper}>
                                         <button className={styles.buttons}>delete</button>
-                                        <button className={styles.buttons}>edit</button>
+                                            <button className={styles.buttons} onClick = { () => {
+                                                setRenderEdit(true)
+                                                setPostHolder(elem)
+                                              }
+                                            }
+                                            
+                                            >edit</button>
+                                    
                                         {
                                             elem.messages.length !== 0 &&
                                             <button className={styles.buttons} onClick={() => {

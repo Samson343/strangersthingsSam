@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     align-self: center;
     border-top: 1px solid white;
+    user-select: none;
     /* border-bottom: 1px solid white; */
 }
 
@@ -26,7 +27,7 @@
 }
 .price{
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     font-weight:600;
 }
 .description {
@@ -38,6 +39,7 @@
     border-bottom: 0.5px solid lightgray;
     padding-bottom: 6px;
     font-weight: 500;
+    font-size: 22px;
 }
 .seller {
     font-size: 16px;
@@ -65,8 +67,13 @@
     width: 20em;
     background-color: rgb(238, 239, 239);
     text-align: center;
-    height: 1.35em;
+    height: 1.33em;
+    user-select: none;
 }
+.spans {
+    color:rgb(225, 224, 224)
+}
+
 
 
 

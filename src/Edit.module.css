@@ -11,7 +11,9 @@
     border-top: 1px solid white;
     /* border-bottom: 1px solid white; */
 }
-
+.spans {
+    color: lightgray
+}
 .postCards {
     border: 2px solid white;
     width: 22em;

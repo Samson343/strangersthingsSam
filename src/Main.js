@@ -81,7 +81,10 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
                                 <h5 className={styles.title}>{elem.title[0].toUpperCase() + elem.title.slice(1)}</h5>
                                 <p className={styles.description}>{elem.description}</p>
                                 <p className={styles.price}>Price: {elem.price}</p>
-                                <p className={styles.seller}>Seller: {elem.author.username}</p>
+                                <p className={styles.seller}>
+                                    <span className={styles.spans}>Seller: &nbsp;</span>
+                                    {elem.author.username}
+                                </p>
                             </div>
                         )
                         )
@@ -98,7 +101,10 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
                                 <h5 className={styles.title}>{elem.title[0].toUpperCase() + elem.title.slice(1)}</h5>
                                 <p className={styles.description}>{elem.description}</p>
                                 <p className={styles.price}>Price: {elem.price}</p>
-                                <p className={styles.seller}>Seller: {elem.author.username}</p>
+                                <p className={styles.seller}>
+                                    <span className={styles.spans}>Seller: &nbsp;</span> 
+                                    {elem.author.username}
+                                </p>
                             </div>
                         )
                         )

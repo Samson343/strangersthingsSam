@@ -8,6 +8,7 @@
     background: linear-gradient(30deg, rgba(116,83,83,1) 1%, rgba(51,26,43,1) 70%); */
     font-size: 0.95em;
     padding: 3px 0px 3px;
+    user-select: none;
 }
 .github {
     height: 25px;

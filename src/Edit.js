@@ -11,11 +11,11 @@ const Edit = ({ post, token, setRenderEdit }) => {
     const [editLocation, setEditLoaction] = useState(false)
     const [editDelivery, setEditDelivery] = useState (false)
 
-    const [titleUpdata, setTitleUpdate] = useState ('')
-    const [descUpdata, setDescUpdate] = useState ('')
-    const [priceUpdata, setPriceUpdate] = useState ('')
-    const [locationUpdata, setLocationUpdate] = useState ('')
-    const [deliveryUpdata, setDeliveryUpdate] = useState ('')
+    const [titleUpdate, setTitleUpdate] = useState ('')
+    const [descUpdate, setDescUpdate] = useState ('')
+    const [priceUpdate, setPriceUpdate] = useState ('')
+    const [locationUpdate, setLocationUpdate] = useState ('')
+    const [deliveryUpdate, setDeliveryUpdate] = useState ('')
 
 
     return (

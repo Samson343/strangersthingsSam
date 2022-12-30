@@ -55,7 +55,7 @@
     margin-bottom: 2px;
 }
 .searchNav {
-    margin-right:1.2em;
+    margin-right:1.3em;
 }
 .searchIcon {
     height: 20px;
@@ -68,7 +68,7 @@
     font-size: 23px;
     font-weight: 400;
     padding: 0 8px 0 0;
-    margin: 5px 0 0 110px;
+    margin: 5px 0 0 50px;
     font-style: oblique;
     border-right: 1px solid lightgrey;
     border-top: 1px solid lightgrey;

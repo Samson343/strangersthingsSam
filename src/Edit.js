@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Edit.module.css"
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { editPost } from "./apiIndex";
 
 const Edit = ({ post, token, setRenderEdit }) => {
 
@@ -15,7 +16,7 @@ const Edit = ({ post, token, setRenderEdit }) => {
     const [descUpdate, setDescUpdate] = useState ('')
     const [priceUpdate, setPriceUpdate] = useState ('')
     const [locationUpdate, setLocationUpdate] = useState ('')
-    const [deliveryUpdate, setDeliveryUpdate] = useState ('')
+    const [deliveryUpdate, setDeliveryUpdate] = useState (false)
 
 
     return (
@@ -119,7 +120,12 @@ const Edit = ({ post, token, setRenderEdit }) => {
                             setRenderEdit(false)
                         }}>back</button>
                         <button className={styles.buttons}>delete</button>
-                        <button>update post</button>  
+                        <button onClick={ () => {
+                            editPost (post._id, titleUpdate, descUpdate, priceUpdate, deliveryUpdate, token)
+                          }
+                        }
+                        
+                        >update post</button>  
                     </div>
                 </div>
             </div>

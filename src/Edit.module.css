@@ -33,7 +33,7 @@
 }
 .price{
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight:500;
     min-width: 300px;
     display: flex;
@@ -56,6 +56,10 @@
     display: flex;
     justify-content: space-between;
 
+}
+.locationInfo {
+    font-size: 12px;
+    color:rgb(146, 146, 229)
 }
 .seller {
     font-size: 16px;
@@ -84,9 +88,11 @@
     margin-right: 20px;
 }
 .location {
+    margin-top: 12px;
     min-width: 300px;
     display: flex;
     justify-content: space-between;
+    
 }
 
 .messages{

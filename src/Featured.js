@@ -29,7 +29,10 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
     return (
         <main className = {styles.main}>
             <div className={styles.postCard}>
-                <h5 className={styles.title}>{clickedPost.title[0].toUpperCase() + clickedPost.title.slice(1)}</h5>
+                { clickedPost.title ?
+                    <h5 className={styles.title}>{clickedPost.title[0].toUpperCase() + clickedPost.title.slice(1)}</h5>
+                    : <h5 className={styles.title}>No title</h5>
+                }
                 <p className={styles.description}>{clickedPost.description}</p>
                 <p className={styles.price}>Price: {clickedPost.price}</p>
                 <p > <span className= {styles.spans}>Location: &nbsp; </span>{clickedPost.location.split("[").join('').split(']').join('')}</p>

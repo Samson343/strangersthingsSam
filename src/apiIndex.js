@@ -180,6 +180,7 @@ export async function editPost (id, title, description, price, delivery, token) 
         const json = await response.json()
 
         console.log("this is the edit response", json)
+        return json
         }
     catch (error) {
         console.error(error)

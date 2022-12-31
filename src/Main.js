@@ -80,8 +80,10 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
                                 console.log("this is the elem", elem)
 
                             }
-                            }> 
-                                <h5 className={styles.title}>{elem.title}</h5>
+                            }>  { elem.title ?
+                                <h5 className={styles.title}>{elem.title[0].toUpperCase() + elem.title.slice(1)}</h5>
+                                  : <h5 className={styles.title}>No title</h5>
+                                }
                                 <p className={styles.description}>{elem.description}</p>
                                 <p className={styles.price}>Price: {elem.price}</p>
                                 <p className={styles.seller}>
@@ -100,8 +102,10 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
                                 console.log("this is the elem", elem)
 
                             }
-                            }>
-                                <h5 className={styles.title}>{elem.title}</h5>
+                            }>  { elem.title ?
+                                <h5 className={styles.title}>{elem.title[0].toUpperCase() + elem.title.slice(1)}</h5>
+                                  : <h5 className={styles.title}>No title</h5>
+                                }
                                 <p className={styles.description}>{elem.description}</p>
                                 <p className={styles.price}>Price: {elem.price}</p>
                                 <p className={styles.seller}>

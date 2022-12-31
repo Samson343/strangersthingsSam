@@ -27,7 +27,7 @@ const Profile = ({ token }) => {
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [renderEdit])
 
     return (
         shouldReply ? 
@@ -56,8 +56,12 @@ const Profile = ({ token }) => {
                                 <div key={index} className={styles.postCards} onClick={(e) => {
 
                                 }
-                                }>
-                                    <h5 className={styles.title}>{elem.title[0].toUpperCase() + elem.title.slice(1)}</h5>
+                                }>  
+                                    {elem.title ?
+                                        <h5 className={styles.title}>{elem.title[0].toUpperCase() + elem.title.slice(1)}</h5>
+                                        : <h5 className={styles.title}>No title</h5>
+                                    }
+        
                                     <p className={styles.description}>{elem.description}</p>
                                     <p className={styles.price}>Price: {elem.price}</p>
 

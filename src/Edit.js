@@ -12,10 +12,10 @@ const Edit = ({ post, token, setRenderEdit }) => {
     const [editLocation, setEditLocation] = useState(false)
     const [editDelivery, setEditDelivery] = useState (false)
 
-    const [titleUpdate, setTitleUpdate] = useState ('')
-    const [descUpdate, setDescUpdate] = useState ('')
-    const [priceUpdate, setPriceUpdate] = useState ('')
-    const [locationUpdate, setLocationUpdate] = useState ('')
+    const [titleUpdate, setTitleUpdate] = useState (post.title)
+    const [descUpdate, setDescUpdate] = useState (post.description)
+    const [priceUpdate, setPriceUpdate] = useState (post.price)
+    const [locationUpdate, setLocationUpdate] = useState (post.location)
     const [deliveryUpdate, setDeliveryUpdate] = useState (false)
 
 
@@ -26,13 +26,13 @@ const Edit = ({ post, token, setRenderEdit }) => {
             <div>
                 <div className={styles.postCards}>
                     { !editTitle ?
-                    <h5 className={styles.title}>{post.title[0].toUpperCase() + post.title.slice(1)} &nbsp;
+                    <h5 className={styles.title}>{post.title} &nbsp;
                         <button className={styles.editButtons} onClick={() => {
                             setEditTitle(true)
                         }}>...</button>
                     </h5>
                     : <div>
-                        <input className = {styles.editInput} placeholder={post.title[0].toUpperCase() + post.title.slice(1)} value = {titleUpdate} onChange = {(e) => {
+                        <input className = {styles.editInput} placeholder={post.title} value = {titleUpdate} onChange = {(e) => {
                             setTitleUpdate(e.target.value)
                         }}></input>
                         <button className={styles.editButtons} onClick={() => {
@@ -72,11 +72,15 @@ const Edit = ({ post, token, setRenderEdit }) => {
                 </div> 
                     }
                     { !editLocation ?
-                    <p className= {styles.location}> <span className={styles.spans}>Location: &nbsp; </span>{post.location.split("[").join('').split(']').join('')} &nbsp;
-                    <button className={styles.editButtons} onClick={() => {
-                            setEditLocation(true)
-                        }}>...</button>
-                    </p>
+                            <div className={styles.location}>
+                                <span className={styles.locationInfo}>
+                                    <span className={styles.spans}>Location: &nbsp; </span>
+                                    {post.location.split("[").join('').split(']').join('')} &nbsp;
+                                </span>
+                                <button className={styles.editButtons} onClick={() => {
+                                    setEditLocation(true)
+                                }}>...</button>
+                            </div>
                       : <div>
                       <input placeholder={post.location.split("[").join('').split(']').join('')} className = {styles.editInput} value = {locationUpdate} onChange = {(e) => {
                             setLocationUpdate(e.target.value)
@@ -120,11 +124,13 @@ const Edit = ({ post, token, setRenderEdit }) => {
                             setRenderEdit(false)
                         }}>back</button>
                         <button className={styles.buttons}>delete</button>
-                        <button onClick={ () => {
-                            editPost (post._id, titleUpdate, descUpdate, priceUpdate, deliveryUpdate, token)
+                        <button onClick={ async () => {
+                            await editPost (post._id, titleUpdate, descUpdate, priceUpdate, deliveryUpdate, token)
+                                .then((data) => {
+                                    data.success && setRenderEdit(false)
+                                })
                           }
-                        }
-                        
+                        }           
                         >update post</button>  
                     </div>
                 </div>

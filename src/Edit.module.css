@@ -47,6 +47,12 @@
     display: flex;
     justify-content: space-between;
 }
+.delivery {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+
+}
 .title {
     margin-top: 15px;
     border-bottom: 0.5px solid lightgray;

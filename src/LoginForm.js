@@ -4,15 +4,13 @@ import { useEffect, useState } from "react"
 import { login } from './apiIndex'
 import '@fontsource/roboto/300.css';
 import TextField from '@mui/material/Button';
-
 import { Redirect } from "react-router";
-
 import React from "react"
 import zIndex from '@mui/material/styles/zIndex';
 
 
 
-const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthorized, token }) => {
+const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthorized, token, setUserName }) => {
 
     const [loginPass, setLoginPass] = useState('')
     const [loginName, setLoginName] = useState('')
@@ -49,6 +47,7 @@ const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthori
                     .then(async data => {
                         console.log(data)
                         setLoginData(data)
+                        
                         if (data.data !== null) {
                             setToken(data.data.token)}
                         if (data.success) { 
@@ -89,7 +88,7 @@ const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthori
 
                 ></input>
             </div>
-            <button className={styles.submitButton}>Login</button>
+            <button className={styles.submitButton}>Log in</button>
             {
                 botMessage &&
                 <p className = { styles.error } >{botMessage}</p>
@@ -102,7 +101,10 @@ const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthori
             }
 
             {   loginData.success &&
+                <>
                  <Redirect to = "/main" />
+                 {setUserName(loginName)}
+                </>
                  
             }
 

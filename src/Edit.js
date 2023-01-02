@@ -3,6 +3,7 @@ import styles from "./Edit.module.css"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { editPost } from "./apiIndex";
+import { Redirect } from "react-router-dom";
 
 const Edit = ({ post, token, setRenderEdit }) => {
 
@@ -139,6 +140,12 @@ const Edit = ({ post, token, setRenderEdit }) => {
                     </div>
                 </div>
             </div>
+            {!token && 
+                <>
+                <Redirect to = "login"></Redirect>
+                {alert('please login to continue')}
+                </>
+            }
         </>
     )
 }

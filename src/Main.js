@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { gatherPosts } from './apiIndex'
 import styles from './Main.module.css'
 import Featured from './Featured'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faSearchPlus } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { style } from '@mui/system'
 
 
-export default function Main ({ setPosts, posts, token, isAuthenticated}) {
+export default function Main ({ setPosts, posts, token, isAuthenticated, userName}) {
 
     const [shouldFeature, setShouldFeature] = useState(false)
     const [featureKey, setFeatureKey] = useState('')
@@ -25,8 +27,6 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
                     console.log(error)
                 })
     }, [shouldFeature])
-
-    //would love to use this line to uppercase the first letter but it hates it every once in a while elem.title[0].toUpperCase() + elem.title.slice(1)
 
     useEffect(() => {
         setFilteredPosts(posts.filter(elem => {
@@ -50,7 +50,16 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
         :
            <>
                 <div className={styles.searchWrapper}>
-                    <span className={styles.heading}>For sale, near you</span>       
+                    {
+                      token ?
+                        <span className={styles.heading}>For sale, near&nbsp;
+                            <Link to = '/profile' className = {styles.loginLink}>{userName}</Link>
+                        </span>
+                        : 
+                        <span className={styles.heading}>to continue, please&nbsp; 
+                            <Link to = "/login" className={styles.loginLink}>log in</Link>
+                        </span>
+                    }       
                     <span className={styles.searchNav}>
                         {showSearchBar &&
                         <input placeholder="search by title, description, or seller's name" className={styles.searchbar} value = {searchValue} onChange = {(e) => {
@@ -102,14 +111,14 @@ export default function Main ({ setPosts, posts, token, isAuthenticated}) {
                                 console.log("this is the elem", elem)
 
                             }
-                            }>  { elem.title ?
-                                <h5 className={styles.title}>{elem.title[0].toUpperCase() + elem.title.slice(1)}</h5>
-                                  : <h5 className={styles.title}>No title</h5>
+                            }>  {elem.title ?
+                                    <h5 className={styles.title}>{elem.title[0].toUpperCase() + elem.title.slice(1)}</h5>
+                                    : <h5 className={styles.title}>No title</h5>
                                 }
                                 <p className={styles.description}>{elem.description}</p>
                                 <p className={styles.price}>Price: {elem.price}</p>
                                 <p className={styles.seller}>
-                                    <span className={styles.spans}>Seller: &nbsp;</span> 
+                                    <span className={styles.spans}>Seller: &nbsp;</span>
                                     {elem.author.username}
                                 </p>
                             </div>

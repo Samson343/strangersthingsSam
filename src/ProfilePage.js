@@ -6,6 +6,7 @@ import styles from './ProfilePage.module.css'
 import Messages from "./Messages";
 import { Link } from "react-router-dom";
 import Edit from "./Edit";
+import { Redirect } from "react-router-dom";
 
 
 const Profile = ({ token }) => {
@@ -15,6 +16,7 @@ const Profile = ({ token }) => {
     const [shouldReply, setShouldReply] = useState (false)
     const [postHolder, setPostHolder] = useState ('')
     const [renderEdit, setRenderEdit] = useState (false)
+
 
     useEffect(() => {
         myPosts(token)
@@ -123,6 +125,12 @@ const Profile = ({ token }) => {
                     })
                 }
             </div>
+            {!token && 
+                <>
+                <Redirect to = "login"></Redirect>
+                {alert('please login to continue')}
+                </>
+            }
         </>
     )
 }

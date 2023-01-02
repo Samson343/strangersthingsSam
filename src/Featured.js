@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from './Featured.module.css'
 import { useState } from "react";
 import { deletePost, sendMessage } from "./apiIndex";
+import { Redirect } from "react-router";
 
 
 
@@ -99,7 +100,11 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                         >Delete</button>
                     }
                 </div>
+                
             </div>
+            {!token &&
+                <Redirect to = "login"></Redirect>
+            }
         </main>
     )
 }

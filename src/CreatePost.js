@@ -88,6 +88,12 @@ const CreatePost = ({ token }) => {
             }
             <button className={styles.submitButton}>Create Post</button>
 
+            {!token && 
+                <>
+                <Redirect to = "login"></Redirect>
+                {alert('please login to continue')}
+                </>
+            }
         </form>
     )
 

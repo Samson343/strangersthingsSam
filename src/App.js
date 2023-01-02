@@ -20,6 +20,7 @@ function App() {
   const [isAuthorized, setIsAuthorized] = useState(false)
   const [token, setToken] = useState('')
   const [renderCondition, setRenderCondition] = useState (false)
+  const [userName, setUserName] = useState('')
   
 
   return (
@@ -34,6 +35,7 @@ function App() {
             setIsAuthorized = {setIsAuthorized}
             setToken = {setToken}
             token = {token}
+            setUserName = {setUserName}
           />
         </Route>
 
@@ -54,6 +56,7 @@ function App() {
             gatherPosts = {gatherPosts}
             token = {token}
             isAuthorized = {isAuthorized}
+            userName = {userName}
           />
         </Route>
 

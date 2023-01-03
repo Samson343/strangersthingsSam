@@ -102,7 +102,7 @@ const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthori
 
             {   loginData.success &&
                 <>
-                 <Redirect to = "/main" />
+                 <Redirect to = "/" />
                  {setUserName(loginName)}
                 </>
                  

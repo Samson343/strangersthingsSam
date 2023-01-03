@@ -35,7 +35,9 @@
     justify-content: space-between;
     
 }
-
+.messageIcon {
+    height: 0.95em
+}
 .spaceHolder {
     min-width: 4.85em;
 }

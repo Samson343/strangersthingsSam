@@ -48,7 +48,7 @@ function App() {
           />
         </Route>
 
-        <Route path = "/main">
+        <Route exact path = "/">
           <NavHeader />
           <Main 
             posts = {posts}

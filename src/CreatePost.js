@@ -84,7 +84,7 @@ const CreatePost = ({ token }) => {
                 </>
             }
             {   redirect &&
-                <Redirect to="/main" />
+                <Redirect to="/" />
             }
             <button className={styles.submitButton}>Create Post</button>
 

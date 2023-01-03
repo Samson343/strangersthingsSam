@@ -23,11 +23,11 @@ export default function NavHeader () {
                 <span>
 
                     <span className={styles.menuContainers}>
-                        <Link to="/main" className={styles.link} title = 'All Posts'>
+                        <Link to="/" className={styles.link} title = 'All Posts'>
                             <FontAwesomeIcon icon={faBars} />
                         </Link>
                         <Link className={styles.link} to = '/profile' title='My Posts and Messages'>
-                            <FontAwesomeIcon icon={faMessage} />
+                            <FontAwesomeIcon icon={faMessage} className = {styles.messageIcon}/>
                         </Link>
                         <Link className={styles.link} to="/createPost" title='Create a Post'>
                             <FontAwesomeIcon icon={faAddressCard} />

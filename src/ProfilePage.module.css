@@ -97,7 +97,7 @@
 }
 
 .messageWrapper {
-    margin: 15px 10px 10px;
+    margin: 10px 10px 10px;
     max-height: 4em;
     overflow-y: scroll;
 }

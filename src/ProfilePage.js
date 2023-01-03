@@ -7,6 +7,7 @@ import Messages from "./Messages";
 import { Link } from "react-router-dom";
 import Edit from "./Edit";
 import { Redirect } from "react-router-dom";
+import { deletePost } from "./apiIndex";
 
 
 const Profile = ({ token }) => {
@@ -16,6 +17,7 @@ const Profile = ({ token }) => {
     const [shouldReply, setShouldReply] = useState (false)
     const [postHolder, setPostHolder] = useState ('')
     const [renderEdit, setRenderEdit] = useState (false)
+    const [updatePosts, setUpdatePosts] = useState (false)
 
 
     useEffect(() => {
@@ -29,7 +31,7 @@ const Profile = ({ token }) => {
             .catch((error) => {
                 console.log(error)
             })
-    }, [renderEdit])
+    }, [renderEdit, updatePosts])
 
     return (
         shouldReply ? 
@@ -69,15 +71,19 @@ const Profile = ({ token }) => {
 
 
                                     <div className={styles.buttonWrapper}>
-                                        <button className={styles.buttons}>delete</button>
-                                            <button className={styles.buttons} onClick = { () => {
-                                                setRenderEdit(true)
-                                                setPostHolder(elem)
-                                              }
+                                        <button className={styles.buttons} onClick={async () => {
+                                            await deletePost(elem._id, token).then(() => {
+                                                setUpdatePosts(true)
+                                            })
+                                        }
+                                        }
+                                        >delete</button>
+                                        <button className={styles.buttons} onClick = { () => {
+                                            setRenderEdit(true)
+                                            setPostHolder(elem)
                                             }
-                                            
-                                            >edit</button>
-                                    
+                                        }
+                                        >edit</button>
                                         {
                                             elem.messages.length !== 0 &&
                                             <button className={styles.buttons} onClick={() => {

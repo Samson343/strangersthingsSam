@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { editPost } from "./apiIndex";
 import { Redirect } from "react-router-dom";
+import { deletePost } from "./apiIndex";
 
 const Edit = ({ post, token, setRenderEdit }) => {
 
@@ -127,7 +128,13 @@ const Edit = ({ post, token, setRenderEdit }) => {
                             <button className={styles.backButton} onClick={() => {
                                 setRenderEdit(false)
                             }}>back</button>
-                            <button className={styles.buttons}>delete</button>
+                            <button className={styles.buttons} onClick={async () => {
+                                            await deletePost(post._id, token).then(() => {
+                                                setRenderEdit(false)
+                                            })
+                                        }
+                                        }
+                                        >delete</button>
                             <button onClick={async () => {
                                 await editPost(post._id, titleUpdate, descUpdate, priceUpdate, deliveryUpdate, token)
                                     .then((data) => {

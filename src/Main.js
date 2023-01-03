@@ -5,7 +5,7 @@ import { gatherPosts } from './apiIndex'
 import styles from './Main.module.css'
 import Featured from './Featured'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { style } from '@mui/system'
 
 
@@ -52,9 +52,9 @@ export default function Main ({ setPosts, posts, token, isAuthenticated, userNam
                 <div className={styles.searchWrapper}>
                     {
                       token ?
-                        <span className={styles.heading}>For sale, near&nbsp;
+                          <span className={styles.heading}>For sale, near&nbsp;
                             <Link to = '/profile' className = {styles.loginLink}>{userName}</Link>
-                        </span>
+                          </span>
                         : 
                         <span className={styles.heading}>to continue, please&nbsp; 
                             <Link to = "/login" className={styles.loginLink}>log in</Link>
@@ -128,7 +128,10 @@ export default function Main ({ setPosts, posts, token, isAuthenticated, userNam
                     }
                 </div>
                 <span></span>
-                <span></span>
+                <FontAwesomeIcon icon={faQuestionCircle} className={styles.helpIcon}
+                    title="click a post to see more info, message the seller, and more!"
+                />
+
                 <span></span>
                 <span></span>
            </> 

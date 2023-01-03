@@ -64,6 +64,12 @@
     border-left: 1px solid rgb(238, 239, 239);
     padding-left: 4px;
 }
+.helpIcon {
+    height: 12px;
+    color: rgb(156, 155, 155);
+    align-self: flex-end;
+    margin-right: 8em;
+}
 .heading {
     font-size: 22px;
     font-weight: 400;

@@ -50,6 +50,7 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                   }
                 </p>
                 <p className={styles.seller}><span className= {styles.spans}> Seller: &nbsp;</span> {clickedPost.author.username}</p>
+    
 
                 {
                     successMessage ? 
@@ -74,11 +75,14 @@ const Featured = ({ clickedPost, setShouldFeature, token, id }) => {
                     {/* if you are not the author, render a message button that switches to a "send" button after it's a clicked */}
                     {!clickedPost.isAuthor ?
                         !renderSendButton ? 
+                            <>
+                             <p className={styles.spaceHolder}>&nbsp;</p>
                             <button className={styles.submitButton} onClick={() => {
                                 setIsMessageBox(true)
                                 setRenderSendButton(true)
                                 // postMessage(clickedPost._id, token)
                             }}>Message Seller</button>
+                            </>
                             :
                             <button className={styles.submitButton} onClick={ async () => {
                                 await sendMessage(id, token, postMessage).then((data) => {

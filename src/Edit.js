@@ -150,7 +150,6 @@ const Edit = ({ post, token, setRenderEdit }) => {
             {!token && 
                 <>
                 <Redirect to = "login"></Redirect>
-                {alert('please login to continue')}
                 </>
             }
         </>

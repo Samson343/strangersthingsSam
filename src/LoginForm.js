@@ -10,7 +10,7 @@ import zIndex from '@mui/material/styles/zIndex';
 
 
 
-const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthorized, token, setUserName }) => {
+const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthorized, token, setUserName, showAlert, setShowAlert }) => {
 
     const [loginPass, setLoginPass] = useState('')
     const [loginName, setLoginName] = useState('')
@@ -108,6 +108,13 @@ const LoginForm = ({ renderCondition, setRenderCondition, setToken, setIsAuthori
                  
             }
 
+            {
+                showAlert &&
+                <>
+                {setShowAlert(false)}
+                {setTimeout(() => alert('please log in to continue'), 300)}
+                </>
+            }
             
         </form>
     

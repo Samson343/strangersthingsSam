@@ -52,7 +52,14 @@
     margin-left: 150px;
     padding: 0;
     margin: 0 0 0 50px;
-    align-self: flex-start;
+    /* align-self: flex-start; */
+    display: flex;
+    justify-content: space-between;
+    padding-right: 55px;
+}
+.logoutButton {
+    height:25px;
+    margin-top: 8px
 }
 .buttons {
     justify-self: flex-end;

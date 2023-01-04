@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from './CreatePost.module.css'
 import { Redirect } from "react-router";
 
-const CreatePost = ({ token }) => {
+const CreatePost = ({ token, setShowAlert }) => {
 
     const [pTitle, setpTitle] = useState('')
     const [pDescription, setpDescription] = useState('')
@@ -91,7 +91,7 @@ const CreatePost = ({ token }) => {
             {!token && 
                 <>
                 <Redirect to = "login"></Redirect>
-                {alert('please login to continue')}
+                {setTimeout(() => setShowAlert(true), 100)}
                 </>
             }
         </form>

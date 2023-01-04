@@ -10,7 +10,7 @@ import { Redirect } from "react-router-dom";
 import { deletePost } from "./apiIndex";
 
 
-const Profile = ({ token }) => {
+const Profile = ({ token, setShowAlert, setToken }) => {
     const [myItems, setMyItems] = useState([])
     const [myMessages, setMyMessages] = useState([])
     const [renderMessages, setRenderMessages] = useState(false)
@@ -51,7 +51,13 @@ const Profile = ({ token }) => {
             />
             :
         <> 
-            <h5 className={styles.heading}>My Posts</h5>
+            <h5 className={styles.heading}>My Posts
+                <button className={styles.logoutButton} onClick = {() => {
+                    setToken('')
+                }}>logout</button>
+            </h5>
+            
+            
             <div className={styles.main}>
                 {
                     myItems.map((elem, index) => {
@@ -134,7 +140,7 @@ const Profile = ({ token }) => {
             {!token && 
                 <>
                 <Redirect to = "login"></Redirect>
-                {alert('please login to continue')}
+                {setTimeout(() => setShowAlert(true), 100)}
                 </>
             }
         </>

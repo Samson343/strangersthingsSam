@@ -21,6 +21,7 @@ function App() {
   const [token, setToken] = useState('')
   const [renderCondition, setRenderCondition] = useState (false)
   const [userName, setUserName] = useState('')
+  const [showAlert, setShowAlert] = useState (false)
   
 
   return (
@@ -36,6 +37,8 @@ function App() {
             setToken = {setToken}
             token = {token}
             setUserName = {setUserName}
+            showAlert = {showAlert}
+            setShowAlert = {setShowAlert}
           />
         </Route>
 
@@ -64,6 +67,8 @@ function App() {
           <NavHeader />
           <ProfilePage 
             token = {token}
+            setShowAlert = {setShowAlert}
+            setToken = {setToken}
           />
 
         </Route>
@@ -72,6 +77,7 @@ function App() {
           <NavHeader />
           <CreatePost 
             token = {token}
+            setShowAlert = {setShowAlert}
           />
 
         </Route>

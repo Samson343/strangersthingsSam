@@ -83,6 +83,7 @@
 .header {
     border-bottom: 1px solid rgb(213, 209, 209);
     padding-bottom: 1px;
+    font-size: 24px;
 }
 .success {
     padding-right: 10px;

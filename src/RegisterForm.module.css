@@ -70,3 +70,26 @@ p {
     font-weight: 700;
     color: rgb(146, 146, 229);
 }
+
+@media screen and (max-width: 900px) {
+    .loginForm {
+        padding: 12px 20px 15px;
+    }
+    .input {
+        width: 12em;
+        height: 0.9em;
+        font-size: 0.65em;
+    }
+    .submitButton {
+        padding: 0;
+        height: 2.2em;
+        margin-top: 18px;
+    }
+    .loginLabels {
+        margin: 0;
+        font-size: 0.69em;
+    }
+    .inputs {
+        width: 15em;
+    }
+  }

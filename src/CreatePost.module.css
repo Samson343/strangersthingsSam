@@ -84,6 +84,7 @@
     border-bottom: 1px solid rgb(213, 209, 209);
     padding-bottom: 1px;
     font-size: 0.82em;
+    font-weight: 400;
 }
 .success {
     padding-right: 10px;
@@ -104,5 +105,9 @@
      .postCard {
          width: 15em;
          padding: 8px 25px 15px;
+     }
+     .header {
+        font-size: 0.9em;
+        font-weight:400;
      }
   }

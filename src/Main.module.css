@@ -148,8 +148,9 @@
     margin-right: 0.7em;
    }
    .searchbar {
-    width: 10em;
-    height: 1.2em;
+    width: 12em;
+    height: 1.15em;
+    font-size: 0.7em;
    }
    .helpIcon {
     margin-right: 0.8em;

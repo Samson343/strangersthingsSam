@@ -125,11 +125,13 @@
 @media screen and (max-width: 950px) {
     .heading {
         font-size: 0.9em;
+        margin-left: 1em;
+       padding-right: 0.8em;
     }
     .logoutButton {
         height: 1.6em;
         font-size: 0.7em;
-        margin-top: 4px
+        margin-top: 4px;
     }
     .postCards {
         width: 14em;

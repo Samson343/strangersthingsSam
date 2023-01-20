@@ -114,4 +114,39 @@
     border-radius: 20%;
 }
 
-
+@media screen and (max-width: 900px) {
+   .postCards {
+      padding-top: 0px;
+      margin-bottom: 5px;
+   }
+   .title {
+    margin-top: 10px;
+    font-size: 0.7em;
+   }
+   .description {
+    font-size: 0.6em;
+   }
+   .price {
+    font-size: 0.5em;
+   }
+   .seller {
+    font-size: 0.5em;
+   }
+   .heading {
+    font-size: 0.85em;
+    margin-left: 10px;
+   }
+   .searchIcon {
+    height: 0.8em;
+   }
+   .searchWrapper {
+    margin-bottom: 1px;
+   }
+   .searchNav {
+    margin-right: 0.7em;
+   }
+   .searchbar {
+    width: fit-content;
+    height: 1.2em;
+   }
+}

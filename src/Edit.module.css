@@ -158,3 +158,25 @@
     background-color: #d6dee1;
     border-radius: 20%;
 }
+
+@media screen and (max-width: 950px) {
+    .main::-webkit-scrollbar {
+        display: none;
+    }
+    .heading {
+        font-size: 0.75em;
+        margin-left: 11px;
+    }
+    .price {
+        font-size: 0.65em;
+    }
+    .description {
+        font-size: 0.65em;
+    }
+    .spans {
+        font-size: 0.75em;
+    }
+    .location {
+        font-size: 0.75em;
+    }
+ }

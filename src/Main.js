@@ -128,12 +128,14 @@ export default function Main ({ setPosts, posts, token, isAuthenticated, userNam
                     }
                 </div>
                 <span></span>
-                <FontAwesomeIcon icon={faQuestionCircle} className={styles.helpIcon}
+                <FontAwesomeIcon icon={faQuestionCircle} className={styles.helpIcon} onClick = {() => {
+                    alert("click a post to see more info, message the seller, and more!")
+                }}
                     title="click a post to see more info, message the seller, and more!"
                 />
 
                 <span></span>
-                <span></span>
+                <span className= {styles.spaceHolders}></span>
            </> 
     )
 }

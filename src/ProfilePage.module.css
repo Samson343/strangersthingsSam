@@ -121,3 +121,46 @@
     background-color: #d6dee1;
     border-radius: 20%;
 }
+
+@media screen and (max-width: 950px) {
+    .heading {
+        font-size: 0.9em;
+    }
+    .logoutButton {
+        height: 1.6em;
+        font-size: 0.7em;
+        margin-top: 4px
+    }
+    .postCards {
+        width: 14em;
+        border-radius: 2%;
+    }
+    .title {
+        margin-top: 2px;
+        font-size: 0.8em;
+    }
+    .description {
+        font-size: 0.7em;
+        margin-top: 5px;
+    }
+    .price {
+        font-size: 0.6em;
+        margin-bottom: 10px;
+    }
+    .messagesBox {
+        font-size: 0.45em;
+        margin: 5px
+    }
+    .messageWrapper {
+        height: 3em;
+        margin-top: 6px;
+    }
+    .seller {
+        font-size: 1em;
+    }
+    .replyButton {
+        height: 1.3em;
+        width: 1.5em;
+        padding: 0;        
+    }
+}

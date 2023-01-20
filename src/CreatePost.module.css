@@ -83,9 +83,26 @@
 .header {
     border-bottom: 1px solid rgb(213, 209, 209);
     padding-bottom: 1px;
-    font-size: 24px;
+    font-size: 0.82em;
 }
 .success {
     padding-right: 10px;
     text-align: right;
 }
+
+@media screen and (max-width: 900px) {
+    .postCards {
+        padding-top: 0px;
+     }
+     .inputs {
+       font-size: 0.55em;
+     }
+     .input {
+        height: 0.7em;
+        width: 10em
+     }
+     .postCard {
+         width: 15em;
+         padding: 8px 25px 15px;
+     }
+  }
